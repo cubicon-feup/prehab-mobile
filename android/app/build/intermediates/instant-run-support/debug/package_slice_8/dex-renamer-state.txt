@@ -1,0 +1,4 @@
+#Thu Mar 29 19:50:59 WEST 2018
+base.0=/Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/build/intermediates/transforms/dexMerger/debug/27
+renamed.0=classes.dex
+file.0=/Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/build/intermediates/transforms/dexMerger/debug/27/classes.dex
