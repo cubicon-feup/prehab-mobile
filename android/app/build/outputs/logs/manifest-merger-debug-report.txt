@@ -1,7 +1,6 @@
 -- Merging decision tree log ---
 manifest
 <<<<<<< HEAD
-<<<<<<< HEAD
 ADDED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
@@ -134,8 +133,6 @@ IMPLIED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 IMPLIED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
 =======
-=======
->>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 ADDED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:1:1-26:12
 	package
 		ADDED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:2:5-25
@@ -224,7 +221,4 @@ android:uses-permission#android.permission.READ_PHONE_STATE
 IMPLIED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
 IMPLIED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
-<<<<<<< HEAD
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
-=======
->>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
