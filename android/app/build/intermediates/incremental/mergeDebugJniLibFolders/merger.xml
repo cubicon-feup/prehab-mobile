@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="/Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/debug/jniLibs"/></dataSet></merger>
 =======
 <merger version="3"><dataSet config="main"><source path="C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\debug\jniLibs"/></dataSet></merger>
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+<merger version="3"><dataSet config="main"><source path="C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\debug\jniLibs"/></dataSet></merger>
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5

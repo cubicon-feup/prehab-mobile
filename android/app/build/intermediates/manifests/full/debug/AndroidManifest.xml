@@ -11,19 +11,26 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 =======
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 
     <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<<<<<<< HEAD
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 
     <application
         android:name="com.prehab.MainApplication"
         android:allowBackup="false"
+<<<<<<< HEAD
 <<<<<<< HEAD
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,6 +40,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.prehab.MainActivity"

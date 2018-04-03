@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 int anim abc_fade_in 0x7f010000
 int anim abc_fade_out 0x7f010001
 int anim abc_grow_fade_in_from_bottom 0x7f010002
@@ -1012,6 +1013,8 @@ int styleable ActionBar_subtitleTextStyle 24
 int styleable ActionBar_title 25
 int styleable ActionBar_titleTextStyle 26
 =======
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int anim abc_fade_in 0x7f050000
 int anim abc_fade_out 0x7f050001
 int anim abc_grow_fade_in_from_bottom 0x7f050002
@@ -2024,12 +2027,16 @@ int styleable ActionBar_subtitle 4
 int styleable ActionBar_subtitleTextStyle 6
 int styleable ActionBar_title 1
 int styleable ActionBar_titleTextStyle 5
+<<<<<<< HEAD
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int[] styleable ActionBarLayout { 0x010100b3 }
 int styleable ActionBarLayout_android_layout_gravity 0
 int[] styleable ActionMenuItemView { 0x0101013f }
 int styleable ActionMenuItemView_android_minWidth 0
 int[] styleable ActionMenuView { }
+<<<<<<< HEAD
 <<<<<<< HEAD
 int[] styleable ActionMode { 0x7f02002c, 0x7f02002e, 0x7f020041, 0x7f02006a, 0x7f0200bc, 0x7f0200d6 }
 int styleable ActionMode_background 0
@@ -2106,6 +2113,8 @@ int styleable LinearLayoutCompat_Layout_android_layout_width 1
 int styleable LinearLayoutCompat_Layout_android_layout_height 2
 int styleable LinearLayoutCompat_Layout_android_layout_weight 3
 =======
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int[] styleable ActionMode { 0x7f010001, 0x7f010007, 0x7f010008, 0x7f01000c, 0x7f01000e, 0x7f01001c }
 int styleable ActionMode_background 3
 int styleable ActionMode_backgroundSplit 4
@@ -2180,11 +2189,15 @@ int styleable LinearLayoutCompat_Layout_android_layout_gravity 0
 int styleable LinearLayoutCompat_Layout_android_layout_height 2
 int styleable LinearLayoutCompat_Layout_android_layout_weight 3
 int styleable LinearLayoutCompat_Layout_android_layout_width 1
+<<<<<<< HEAD
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int[] styleable ListPopupWindow { 0x010102ac, 0x010102ad }
 int styleable ListPopupWindow_android_dropDownHorizontalOffset 0
 int styleable ListPopupWindow_android_dropDownVerticalOffset 1
 int[] styleable MenuGroup { 0x0101000e, 0x010100d0, 0x01010194, 0x010101de, 0x010101df, 0x010101e0 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 int styleable MenuGroup_android_enabled 0
 int styleable MenuGroup_android_id 1
@@ -2267,6 +2280,8 @@ int styleable TextAppearance_android_typeface 1
 int styleable TextAppearance_android_textStyle 2
 int styleable TextAppearance_android_textColor 3
 =======
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int styleable MenuGroup_android_checkableBehavior 5
 int styleable MenuGroup_android_enabled 0
 int styleable MenuGroup_android_id 1
@@ -2343,11 +2358,15 @@ int styleable SwitchCompat_switchTextAppearance 5
 int styleable SwitchCompat_thumbTextPadding 4
 int styleable SwitchCompat_track 3
 int[] styleable TextAppearance { 0x01010095, 0x01010096, 0x01010097, 0x01010098, 0x01010161, 0x01010162, 0x01010163, 0x01010164, 0x7f010024 }
+<<<<<<< HEAD
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int styleable TextAppearance_android_shadowColor 4
 int styleable TextAppearance_android_shadowDx 5
 int styleable TextAppearance_android_shadowDy 6
 int styleable TextAppearance_android_shadowRadius 7
+<<<<<<< HEAD
 <<<<<<< HEAD
 int styleable TextAppearance_textAllCaps 8
 int[] styleable TextStyle { 0x01010034, 0x01010095, 0x01010097, 0x01010098, 0x010100ab, 0x01010153, 0x0101015d, 0x01010161, 0x01010162, 0x01010163, 0x01010164 }
@@ -2359,6 +2378,8 @@ int styleable TextStyle_android_ellipsize 4
 int styleable TextStyle_android_maxLines 5
 int styleable TextStyle_android_singleLine 6
 =======
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int styleable TextAppearance_android_textColor 3
 int styleable TextAppearance_android_textSize 0
 int styleable TextAppearance_android_textStyle 2
@@ -2367,11 +2388,15 @@ int styleable TextAppearance_textAllCaps 8
 int[] styleable TextStyle { 0x01010034, 0x01010095, 0x01010097, 0x01010098, 0x010100ab, 0x01010153, 0x0101015d, 0x01010161, 0x01010162, 0x01010163, 0x01010164 }
 int styleable TextStyle_android_ellipsize 4
 int styleable TextStyle_android_maxLines 5
+<<<<<<< HEAD
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int styleable TextStyle_android_shadowColor 7
 int styleable TextStyle_android_shadowDx 8
 int styleable TextStyle_android_shadowDy 9
 int styleable TextStyle_android_shadowRadius 10
+<<<<<<< HEAD
 <<<<<<< HEAD
 int[] styleable Theme { 0x01010057, 0x010100ae, 0x7f020000, 0x7f020001, 0x7f020002, 0x7f020003, 0x7f020004, 0x7f020005, 0x7f020006, 0x7f020007, 0x7f020008, 0x7f020009, 0x7f02000a, 0x7f02000b, 0x7f02000c, 0x7f02000e, 0x7f02000f, 0x7f020010, 0x7f020011, 0x7f020012, 0x7f020013, 0x7f020014, 0x7f020015, 0x7f020016, 0x7f020017, 0x7f020018, 0x7f020019, 0x7f02001a, 0x7f02001b, 0x7f02001c, 0x7f02001d, 0x7f02001e, 0x7f020021, 0x7f020025, 0x7f020026, 0x7f020027, 0x7f020028, 0x7f02002b, 0x7f020033, 0x7f020034, 0x7f020035, 0x7f020036, 0x7f020037, 0x7f020038, 0x7f02003a, 0x7f02003b, 0x7f02003e, 0x7f02003f, 0x7f020045, 0x7f020046, 0x7f020047, 0x7f020048, 0x7f020049, 0x7f02004a, 0x7f02004b, 0x7f02004c, 0x7f020052, 0x7f020055, 0x7f020056, 0x7f020059, 0x7f02005b, 0x7f02005e, 0x7f02005f, 0x7f020060, 0x7f020061, 0x7f020062, 0x7f02006c, 0x7f020075, 0x7f020076, 0x7f020079, 0x7f02007a, 0x7f02007b, 0x7f02007c, 0x7f02007d, 0x7f02007e, 0x7f02008b, 0x7f02008c, 0x7f02008d, 0x7f020090, 0x7f020092, 0x7f02009c, 0x7f02009d, 0x7f0200ac, 0x7f0200ad, 0x7f0200ae, 0x7f0200b4, 0x7f0200b5, 0x7f0200c0, 0x7f0200c3, 0x7f0200c4, 0x7f0200c5, 0x7f0200c6, 0x7f0200c7, 0x7f0200c8, 0x7f0200c9, 0x7f0200ca, 0x7f0200d7, 0x7f0200d8, 0x7f0200dc, 0x7f0200dd, 0x7f0200de, 0x7f0200df, 0x7f0200e0, 0x7f0200e1, 0x7f0200e2, 0x7f0200e3, 0x7f0200e4, 0x7f0200e5 }
 int styleable Theme_android_windowIsFloating 0
@@ -2516,6 +2541,8 @@ int styleable View_paddingStart 3
 int styleable View_theme 4
 int[] styleable ViewBackgroundHelper { 0x010100d4, 0x7f020030, 0x7f020031 }
 =======
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int styleable TextStyle_android_singleLine 6
 int styleable TextStyle_android_textAppearance 0
 int styleable TextStyle_android_textColor 3
@@ -2663,12 +2690,16 @@ int styleable View_paddingEnd 3
 int styleable View_paddingStart 2
 int styleable View_theme 4
 int[] styleable ViewBackgroundHelper { 0x010100d4, 0x7f0100e4, 0x7f0100e5 }
+<<<<<<< HEAD
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
 int styleable ViewBackgroundHelper_android_background 0
 int styleable ViewBackgroundHelper_backgroundTint 1
 int styleable ViewBackgroundHelper_backgroundTintMode 2
 int[] styleable ViewStubCompat { 0x010100d0, 0x010100f2, 0x010100f3 }
 int styleable ViewStubCompat_android_id 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 int styleable ViewStubCompat_android_layout 1
 int styleable ViewStubCompat_android_inflatedId 2
@@ -2678,3 +2709,8 @@ int styleable ViewStubCompat_android_inflatedId 2
 int styleable ViewStubCompat_android_layout 1
 int xml preferences 0x7f060000
 >>>>>>> a19d326f15025d503ad2c80565be938013775f64
+=======
+int styleable ViewStubCompat_android_inflatedId 2
+int styleable ViewStubCompat_android_layout 1
+int xml preferences 0x7f060000
+>>>>>>> b3a7c5aa5b503579227ed1e04e5828e7602e24f5
