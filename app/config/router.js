@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import { HomeScreen } from '../screens/HomeScreen';
 import { ExerciseScreen } from '../screens/ExerciseScreen';
 import { NutritionScreen } from '../screens/NutritionScreen';
+import { ExerciseDescription } from '../screens/ExerciseDescription';
 
 export const NavigationStack = StackNavigator({
     HomeScreen: {
@@ -22,6 +23,12 @@ export const NavigationStack = StackNavigator({
         screen: NutritionScreen,
         navigationOptions: {
             title: 'Nutrição',
+        },
+    },
+    ExerciseDescription: {
+        screen: ExerciseDescription,
+        navigationOptions: {
+            title: 'Descrição',
         },
     },
 });

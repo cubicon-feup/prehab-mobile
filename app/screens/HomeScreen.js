@@ -84,6 +84,8 @@ export class HomeScreen extends React.Component {
                         {"Ajuda"}
                     </Text>
                 </TouchableOpacity>
+
+                
             </View>
         </ScrollView>
     );
