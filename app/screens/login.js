@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Alert,Image, TextInput,KeyboardAvoidingView} from 'react-native';
 import { Card, Button, FormLabel, FormInput } from "react-native-elements";
-import {onSignIn } from "../auth";
+import {onSignIn} from "../auth";
 
 export default class Login extends React.Component {
     static navigationOptions = {
@@ -14,6 +14,7 @@ export default class Login extends React.Component {
         this.state = {
             username: '',
             password:'',
+            isLoading: true,
         };
         this.baseState = this.state;
     }
@@ -21,20 +22,43 @@ export default class Login extends React.Component {
     clearInput(){
         this.setState(this.baseState);
     }
-    _onSignIn (password){
-        if(password=="silva"){
-            onSignIn().then(() => this.state.password = '',this.props.navigation.navigate("SignedIn"));
-        }else{
-            this.clearInput();
-            Alert.alert('Password errado');
-            
-        }
+
+    _onSignIn (username,password){
+        fetch('http://ec2-35-176-153-210.eu-west-2.compute.amazonaws.com/api/login/', {
+            method: 'POST',
+            headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            username: username,
+            password: password,
+            }),
+        }).then(response => {
+            if(response.status === 200){
+                onSignIn().then(() => this.props.navigation.navigate("SignedIn"));
+            }else{
+                this.clearInput();
+                Alert.alert('Utilizador ou Password errado');                
+            }
+        }).catch(error => {
+            console.error(error);
+        });
+        
     };
 
     render() {
         return (
             <KeyboardAvoidingView style={styles.container} behavior="padding">
                 <Image source={require('../img/sj.png')} style={styles.logo}/>
+                <TextInput style = {styles.input}
+                    underlineColorAndroid = "transparent"
+                    placeholder = "Utilizador"
+                    placeholderTextColor = "#ccc"
+                    autoCapitalize = "none"
+                    value={this.state.username}
+                    onChangeText={(username) => this.setState({username})}
+                />
                 <TextInput style = {styles.input}
                     secureTextEntry={true}
                     underlineColorAndroid = "transparent"
@@ -51,7 +75,7 @@ export default class Login extends React.Component {
                 title="Entrar"
                 onPress={() => {
                     if(this.state.password!=""){
-                        this._onSignIn(this.state.password);
+                        this._onSignIn(this.state.username,this.state.password);
                     }else{
                         Alert.alert('Introduza a sua password')
                     }

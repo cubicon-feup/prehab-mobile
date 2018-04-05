@@ -10,7 +10,6 @@ import { FontAwesome } from "react-native-vector-icons";
 import RegisterPassword from "./screens/registerPassword";
 import SignIn from "./screens/login";
 import Home from "./screens/home";
-import Profile from "./screens/profile";
 
 const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
