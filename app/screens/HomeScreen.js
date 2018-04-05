@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Button, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Button, ScrollView, TouchableOpacity, Image} from 'react-native';
 import Text from '../config/AppText';
 import { Dimensions } from 'react-native';
+import PropTypes from 'prop-types';
 
 export class HomeScreen extends React.Component {
   render() {

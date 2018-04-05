@@ -2,26 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
 import Text from '../config/AppText';
 import flatListData from '../data/flatListData';
-
-class FlatListItem extends Component {
-  render() {          
-      return (        
-          <View style={styles.externalView}>            
-              <View style={styles.internalView}>            
-                  <View style={styles.viewText}>
-                    <Text style={styles.flatListItem}>{this.props.item.name}</Text>
-                  </View>  
-                  <Image 
-                      source={require('../assets/img/arrow_right.png')}
-                      style={styles.imageView}
-                  />
-              </View>
-              <View style={styles.whiteView}>
-              </View>
-        </View>
-      );
-  }
-}
+import PropTypes from 'prop-types';
+import FlatListItem from '../data/FlatListItem'
 
 export class ExerciseScreen extends Component {
 
@@ -75,7 +57,8 @@ const styles = StyleSheet.create({
   },
   externalView: {
     flex: 1,
-    flexDirection:'row'
+    flexDirection:'row',
+    margin: 8
   },
   internalView: {
     flex: 1,
@@ -93,8 +76,4 @@ const styles = StyleSheet.create({
     margin: 5,
     alignContent:'flex-end'
   },
-  whiteView: {
-    height: 1,
-    backgroundColor:'white'                            
-  }
 });

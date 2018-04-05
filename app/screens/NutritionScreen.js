@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Text from '../config/AppText';
+import PropTypes from 'prop-types';
 
 export class NutritionScreen extends React.Component {
   render() {

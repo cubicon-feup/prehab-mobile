@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 
 import ActionBar from 'react-native-action-bar';
+import PropTypes from 'prop-types';
 
 export default class Example extends Component {
     render() {
