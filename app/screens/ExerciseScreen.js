@@ -9,8 +9,32 @@ import { Dimensions } from 'react-native';
 
 export class ExerciseScreen extends Component {
 
-  render() {
+  constructor(props){
+    super(props);
+    this.state ={ isLoading: true}
+  }
 
+  componentDidMount(){
+    let apiRoute;
+    /*
+    return fetch(apiRoute)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson,
+        }, function(){
+
+        });
+
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+    */
+  }
+
+  render() {
     const dayExercises = flatListData.map((day, i) => { 
       return (
         <View key={i} style={styles.slide}>
@@ -54,7 +78,6 @@ export class ExerciseScreen extends Component {
   onDescription = () => {
     this.props.navigation.navigate('ExerciseDescription');
   }
-
 }
 
 const styles = StyleSheet.create({
