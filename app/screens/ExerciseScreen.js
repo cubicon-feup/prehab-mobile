@@ -1,30 +1,52 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
+import Swiper from 'react-native-swiper';
 import Text from '../config/AppText';
 import flatListData from '../data/flatListData';
 import PropTypes from 'prop-types';
-import FlatListItem from '../data/FlatListItem'
+import FlatListItem from '../data/FlatListItem';
+import { Dimensions } from 'react-native';
 
 export class ExerciseScreen extends Component {
 
   render() {
+
+    const dayExercises = flatListData.map((day, i) => { 
+      return (
+        <View key={i} style={styles.slide}>
+          <Text style={styles.title}>Exercício físico</Text>
+          <Text style={styles.title}>{day.date}</Text>
+          
+          <View style={styles.list}>
+            <FlatList 
+              data={day.exercises}
+              keyExtractor={(item, index) => 'list-item-${index}'}
+              renderItem={ ({item}) => {
+                return (
+                  <View style={styles.itemContainer}>
+                    <TouchableOpacity
+                      key={"exerciseDescription"}
+                      onPress={() => this.onDescription()}
+                      style={styles.item}
+                    >
+                      <FlatListItem item={item}></FlatListItem>
+                    </TouchableOpacity>
+                  </View>
+                );
+              }}
+            >
+            </FlatList>
+          </View>
+          
+        </View>
+      );
+    });
+
     return (
     <View style={styles.container}>
-      <Text style={styles.title}>Exercício físico</Text>
-      <FlatList 
-        data={flatListData}
-        renderItem={({item, index})=>{
-          return (
-            <TouchableOpacity
-              key={"description"}
-              onPress={() => this.onDescription()}
-            >
-              <FlatListItem item={item} index={index}></FlatListItem>
-            </TouchableOpacity>
-          );
-        }}
-      >
-      </FlatList>
+      <Swiper style={styles.wrapper} showsButtons showsPagination={false}>
+        {dayExercises}
+      </Swiper>
     </View>
     );
   }
@@ -36,6 +58,21 @@ export class ExerciseScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  item: {
+    width: Dimensions.get('window').width * 0.6,
+    borderWidth: 1,
+    borderColor: "lightgray",
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  itemContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  list: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   container: {
     flex: 1,
     justifyContent: 'flex-start',
@@ -75,5 +112,9 @@ const styles = StyleSheet.create({
     height: 32, 
     margin: 5,
     alignContent:'flex-end'
+  },
+  wrapper: {
+  },
+  slide: {
   },
 });
