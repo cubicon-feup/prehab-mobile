@@ -5,6 +5,7 @@ import { HomeScreen } from '../screens/HomeScreen';
 import { ExerciseScreen } from '../screens/ExerciseScreen';
 import { NutritionScreen } from '../screens/NutritionScreen';
 import { ExerciseDescription } from '../screens/ExerciseDescription';
+import { ExerciseFinal } from '../screens/ExerciseFinal';
 import Text from '../config/AppText';
 
 export const NavigationStack = StackNavigator({
@@ -29,7 +30,13 @@ export const NavigationStack = StackNavigator({
     ExerciseDescription: {
         screen: ExerciseDescription,
         navigationOptions: {
-            title: 'Descrição',
+            title: 'Exercício',
+        },
+    },
+    ExerciseFinal: {
+        screen: ExerciseFinal,
+        navigationOptions: {
+            title: 'Exercício',
         },
     },
 });

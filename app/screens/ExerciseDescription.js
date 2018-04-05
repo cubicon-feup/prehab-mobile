@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image} from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import Text from '../config/AppText';
 import PropTypes from 'prop-types';
 import Button from 'react-native-button'
@@ -7,15 +7,28 @@ import FlatListItem from '../data/FlatListItem'
 
 export class ExerciseDescription extends React.Component {
 
-  _handlePress() {
-    console.log('Pressed!');
+  onFinalOk = () => {
+    this.props.navigation.navigate('ExerciseFinal', {value: 1});
+  }
+
+  onFinalNotOk = () => {
+    this.props.navigation.navigate('ExerciseFinal', {value: 0});
+  }
+
+  onBack = () => {
+    this.props.navigation.navigate('ExerciseScreen');
   }
 
   render() {
     return (
     <View style={styles.containerBack}>  
-      <Text style={styles.title}>Exercício físico</Text>
-        <View style={styles.externalView}>      
+      <Text style={styles.title}>Exercício físico</Text>  
+        <TouchableOpacity
+              key={"description"}
+              onPress={() => this.onBack()}
+              style={styles.opacity}
+            >   
+        <View style={styles.externalView}> 
           <View style={styles.internalView}>  
             <Image 
               source={require('../assets/img/arrow_left.png')}
@@ -23,24 +36,25 @@ export class ExerciseDescription extends React.Component {
             />          
             <View style={styles.viewText}>
               <Text style={styles.flatListItem}>Nome do Exercício</Text>
-            </View>  
-        </View>
+            </View> 
+          </View>
       </View>
+      </TouchableOpacity>  
       <View style={styles.container}>
         <Button
         style={styles.buttonContainerR}
-        onPress={() => this._handlePress()}>
+        onPress={() => this.onFinalNotOk()}>
         Reportar dificuldade
         </Button>
         <View style={styles.containerB}>
         <Button
         style={styles.buttonContainerC}
-        onPress={() => this._handlePress()}>
+        onPress={() => this.onFinalOk()}>
         Cumprido
         </Button>
         <Button
         style={styles.buttonContainerF}
-        onPress={() => this._handlePress()}>
+        onPress={() => this.onFinalNotOk()}>
         Não Cumprido
         </Button>
         </View>
@@ -56,6 +70,9 @@ const styles = StyleSheet.create({
     flexDirection:'row',            
     backgroundColor: '#F8F9FE',
     height: 42
+  },
+  opacity: {
+    height: 50
   },
   externalView: {
     flex: 1,
@@ -108,7 +125,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#B7F8DB',
     alignItems: 'center',
     padding: 10,
-    margin: 10
+    margin: 10,
   },
   buttonContainerF: {
     borderRadius:10,
