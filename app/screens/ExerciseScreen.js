@@ -8,11 +8,10 @@ class FlatListItem extends Component {
       return (        
           <View style={styles.externalView}>            
               <View style={styles.internalView}>            
-                  <View style={styles.viewText}>            
-                          <Text style={styles.flatListItem}>{this.props.item.name}</Text>
+                  <View style={styles.viewText}>
+                    <Text style={styles.flatListItem}>{this.props.item.name}</Text>
                   </View>  
                   <Image 
-                      //source={{uri: this.props.item.imageUrl}}
                       source={require('../assets/img/arrow_right.png')}
                       style={styles.imageView}
                   />
@@ -31,18 +30,17 @@ export class ExerciseScreen extends Component {
     <View style={styles.container}>
       <Text style={styles.title}>Exercício físico</Text>
       <FlatList 
-      data={flatListData}
-      renderItem={({item, index})=>{
+        data={flatListData}
+        renderItem={({item, index})=>{
           return (
             <TouchableOpacity
-                    key={"description"}
-                    onPress={() => this.onDescription()}
+              key={"description"}
+              onPress={() => this.onDescription()}
             >
-          <FlatListItem item={item} index={index}>
-
-          </FlatListItem>
-          </TouchableOpacity>);
-      }}
+              <FlatListItem item={item} index={index}></FlatListItem>
+            </TouchableOpacity>
+          );
+        }}
       >
       </FlatList>
     </View>
@@ -72,7 +70,7 @@ const styles = StyleSheet.create({
   flatListItem: {
     color:'#323BEA',
     padding: 10,
-    fontSize: 20, 
+    fontSize: 23, 
     textAlign: 'center' 
   },
   externalView: {
