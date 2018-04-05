@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
-
+import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
+import Text from '../config/AppText';
 import flatListData from '../data/flatListData';
 
 class FlatListItem extends Component {
@@ -13,7 +13,7 @@ class FlatListItem extends Component {
                   </View>  
                   <Image 
                       //source={{uri: this.props.item.imageUrl}}
-                      source={require('../assets/img/move.png')}
+                      source={require('../assets/img/arrow_right.png')}
                       style={styles.imageView}
                   />
               </View>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   flatListItem: {
     color:'#323BEA',
     padding: 10,
-    fontSize: 16, 
+    fontSize: 20, 
     textAlign: 'center' 
   },
   externalView: {

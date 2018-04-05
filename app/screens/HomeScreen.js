@@ -1,32 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Button, ScrollView, TouchableOpacity, Image } from 'react-native';
+import Text from '../config/AppText';
 import { Dimensions } from 'react-native';
 
 export class HomeScreen extends React.Component {
   render() {
     return (
-      /*
-      <View style={styles.container}>
-        <Text>This is the Home screen!</Text>
-      </View>*/
-
-      /*
-      <View style={styles.container}>
-        <Button
-            key={"exercise"}
-            title="Exercício"
-            color="#841584"
-            onPress={() => this.onExercise()}
-        />
-
-        <Button
-            key={"nutrition"}
-            title="Nutrição"
-            color="#35CC13"
-            onPress={() => this.onNutrition()}
-        />
-      </View>*/
-
         <ScrollView>
             <View style={styles.container}>
                 <TouchableOpacity
@@ -83,9 +62,7 @@ export class HomeScreen extends React.Component {
                     <Text style={styles.itemTitle}>
                         {"Ajuda"}
                     </Text>
-                </TouchableOpacity>
-
-                
+                </TouchableOpacity>     
             </View>
         </ScrollView>
     );
@@ -130,6 +107,6 @@ var styles = StyleSheet.create({
     },
     itemTitle: {
         marginTop: 16,
-        fontSize: 30
+        fontSize: 30,
     },
 });

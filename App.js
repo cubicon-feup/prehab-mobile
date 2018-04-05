@@ -1,8 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-//import { HomeScreen } from './app/screens/HomeScreen';
-//import { StackNavigator } from 'react-navigation';
+import { StyleSheet, View } from 'react-native';
+import Text from './app/config/AppText';
 import { NavigationStack } from './app/config/router';
 
 

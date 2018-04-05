@@ -5,6 +5,7 @@ import { HomeScreen } from '../screens/HomeScreen';
 import { ExerciseScreen } from '../screens/ExerciseScreen';
 import { NutritionScreen } from '../screens/NutritionScreen';
 import { ExerciseDescription } from '../screens/ExerciseDescription';
+import Text from '../config/AppText';
 
 export const NavigationStack = StackNavigator({
     HomeScreen: {
