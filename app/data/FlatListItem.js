@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
 import Text from '../config/AppText';
-import flatListData from '../data/flatListData';
 import PropTypes from 'prop-types';
 
 export default class FlatListItem extends Component {
