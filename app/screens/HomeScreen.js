@@ -3,8 +3,8 @@ import { StyleSheet, View, Button, ScrollView, TouchableOpacity, Image} from 're
 import Text from '../config/AppText';
 import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
-import MenuBar from '../screens/MenuBar'
 
+const backgroundColor = '#0067a7';
 export class HomeScreen extends React.Component {
   render() {
     return (
