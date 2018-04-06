@@ -1,25 +1,48 @@
 import React, { Component } from 'react';
-import {
-    View,
-} from 'react-native';
+import {View, Text, StyleSheet, StatusBar } from 'react-native';
 
-import ActionBar from 'react-native-action-bar';
-import PropTypes from 'prop-types';
+import ToolbarComponent from 'react-native-toolbar-component';
 
 export default class Example extends Component {
     render() {
-        <ActionBar
-            backgroundColor={'#3B373C'}
-            leftIconName={'menu'}
-            onLeftPress={this.handleLeftAction}
-            leftBadge={1}
-            leftText={'Left'}
-            title={'Title'}
-            onTitlePress={this.handleTitlePress}
-            rightIconName={'star'}
-            onRightPress={this.handleRightAction}
-            rightText={'Right'}
-            rightBadge={4}
-        />
+        return (
+          <View style={styles.container}>
+            <StatusBar barStyle="light-content" />
+            <ToolbarComponent
+              foreground="light"
+              style={styles.toolbar}
+              title="Title"
+              leftItem={{
+                title: 'Left',
+                //icon: require('./img/x-white.png'),
+                layout: 'title',
+                onPress: () => {
+                  console.log('pressed');
+                },
+              }}
+              rightItem={{
+                title: 'Right',
+                layout: 'title',
+                onPress: () => {
+                  console.log('pressed');
+                },
+              }}
+            />
+          </View>
+        );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    title: {
+      color: 'white',
+      fontSize: 12,
+      textAlign: 'center',
+    },
+    toolbar: {
+      backgroundColor: 'red',
+    },
+  });

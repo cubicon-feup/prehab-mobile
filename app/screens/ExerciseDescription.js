@@ -20,9 +20,16 @@ export class ExerciseDescription extends React.Component {
   }
 
   render() {
+
+    const { params } = this.props.navigation.state;
+    const dia = params ? params.dia : null;
+    const name = params ? params.name : null;
+    const descricao = params ? params.descricao : null;
+
     return (
     <View style={styles.containerBack}>  
       <Text style={styles.title}>Exercício físico</Text>  
+      <Text style={styles.data}>{dia}</Text>
         <TouchableOpacity
               key={"description"}
               onPress={() => this.onBack()}
@@ -35,7 +42,7 @@ export class ExerciseDescription extends React.Component {
               style={styles.imageView}
             />          
             <View style={styles.viewText}>
-              <Text style={styles.flatListItem}>Nome do Exercício</Text>
+              <Text style={styles.flatListItem}>{name}</Text>
             </View> 
           </View>
       </View>
@@ -67,9 +74,9 @@ export class ExerciseDescription extends React.Component {
 const styles = StyleSheet.create({
   internalView: {
     flex: 1,
-    flexDirection:'row',            
-    backgroundColor: '#F8F9FE',
-    height: 42
+    alignContent:'center',
+    flexDirection:'row',          
+    height: 25
   },
   opacity: {
     height: 50
@@ -77,23 +84,31 @@ const styles = StyleSheet.create({
   externalView: {
     flex: 1,
     flexDirection:'row',
-    margin: 8
   },
   imageView: {
-    width: 32, 
-    height: 32, 
+    width: 23, 
+    height: 23, 
     margin: 5,
     alignContent:'flex-end'
   },
   flatListItem: {
     color:'#323BEA',
-    padding: 10,
+    padding: 1,
     fontSize: 23, 
+    flexDirection:'row',  
     textAlign: 'center' 
   },
   title: {
     textAlign: 'center',
     fontSize: 32,
+    fontWeight: '300',
+    marginTop:10,
+    marginBottom: 20,
+    color:'#323BEA'
+  },
+  data: {
+    textAlign: 'center',
+    fontSize: 16,
     fontWeight: '300',
     marginTop:10,
     marginBottom: 20,
