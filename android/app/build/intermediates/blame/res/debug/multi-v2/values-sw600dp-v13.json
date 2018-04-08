@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\FEUP\\LGP_GPIE\\projects\\prehab-mobile\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "/Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\IL0016G\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\e429a52fd4d1f8a10a5655e93077dd1f\\res\\values-sw600dp\\values-sw600dp.xml",
+                    "source": "/Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4275660456db08010d76730cabf081bd/res/values-sw600dp/values-sw600dp.xml",
                     "from": {
                         "startLines": "4,5,6,7,10,13,14,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

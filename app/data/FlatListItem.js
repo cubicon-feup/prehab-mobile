@@ -32,13 +32,14 @@ export default class FlatListItem extends Component {
       fontSize: 32,
       fontWeight: '300',
       marginTop:10,
-      marginBottom: 20,
+      marginBottom: 10,
       color:'#323BEA'
     },
     flatListItem: {
       color:'#323BEA',
       padding: 10,
-      fontSize: 23, 
+      marginBottom: 5,
+      fontSize: 20, 
       textAlign: 'center' 
     },
     externalView: {
@@ -49,7 +50,6 @@ export default class FlatListItem extends Component {
     internalView: {
       flex: 1,
       flexDirection:'row',            
-      backgroundColor: '#F8F9FE'
     },
     viewText: {
       flex: 1,

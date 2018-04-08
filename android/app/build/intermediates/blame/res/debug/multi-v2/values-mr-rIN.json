@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\FEUP\\LGP_GPIE\\projects\\prehab-mobile\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr-rIN\\values-mr-rIN.xml",
+            "outputFile": "/Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mr-rIN/values-mr-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\IL0016G\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\e429a52fd4d1f8a10a5655e93077dd1f\\res\\values-mr-rIN\\values-mr-rIN.xml",
+                    "source": "/Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4275660456db08010d76730cabf081bd/res/values-mr-rIN/values-mr-rIN.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

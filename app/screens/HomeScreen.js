@@ -4,8 +4,15 @@ import Text from '../config/AppText';
 import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 
-const backgroundColor = '#0067a7';
 export class HomeScreen extends React.Component {
+
+    static navigationOptions = { 
+        title: "Sobre", 
+        headerStyle: {backgroundColor:'#F8F9FE'}, 
+        headerTintColor: '#FE005C', 
+        headerTitleStyle: {textAlign:'center', alignSelf:'center',flex:1,fontSize: 23,fontWeight: "normal",width: "35%" },
+     backTitle: "" };
+
   render() {
     return (
         <ScrollView>
@@ -78,16 +85,6 @@ export class HomeScreen extends React.Component {
       this.props.navigation.navigate('NutritionScreen');
   }
 }
-
-/*
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});*/
 
 var styles = StyleSheet.create({
     container: {
