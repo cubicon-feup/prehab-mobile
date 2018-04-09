@@ -1,15 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text,Button, View } from 'react-native';
-import { Image,TextInput,KeyboardAvoidingView} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { Alert,Image, TextInput,KeyboardAvoidingView} from 'react-native';
+import { Card, Button, FormLabel, FormInput } from "react-native-elements";
 
 export default class RegisterPassword extends React.Component {
-    static navigationOptions = {
-        title:'Registar Password',
-    }; 
     constructor(props) {
         super(props);
         this.state = {
-            usercode: '',
+            usercode:'',
             password:'',
             confirmPassword:'',
         };
@@ -20,18 +18,32 @@ export default class RegisterPassword extends React.Component {
         this.setState(this.baseState);
     }
 
-    passwordValidation(usercode,password,confirmPassword){
+    passwordValidation(usercode,password,confirmPassword){        
         if(password==confirmPassword){
-            return this.savePassword(usercode,password);
+            fetch('http://ec2-35-176-153-210.eu-west-2.compute.amazonaws.com/api/user/activate/', {
+                method: 'POST',
+                headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    activation_code: usercode.toString(),
+                    password: password.toString(),
+                }),
+            }).then(response => {
+                if(response.status === 200){
+                    onSignIn().then(() => this.props.navigation.navigate("SignIn"));
+                }else{
+                   alert('Operação não Efetuada');                
+                }
+            }).catch(error => {
+                console.error(error);
+            });
+        }else{
+            alert('Password não são iguais');
         }
-        
-        return false;
     }
 
-    savePassword(usercode,password){
-        return true;
-    }
- 
     render() {
         return (
             <KeyboardAvoidingView style={styles.container} behavior="padding">
@@ -42,7 +54,7 @@ export default class RegisterPassword extends React.Component {
                     placeholderTextColor = "#ccc"
                     autoCapitalize = "none"
                     value={this.state.usercode}
-                    onChange={(usercode)=>{this.setState({usercode})}}
+                    onChangeText={(usercode) => this.setState({usercode})}
                 />
                     
                 <TextInput style = {styles.input}
@@ -52,7 +64,7 @@ export default class RegisterPassword extends React.Component {
                     placeholderTextColor = "#ccc"
                     autoCapitalize = "none"
                     value={this.state.password}
-                    onChange={(password)=>{this.setState({password})}}
+                    onChangeText={(password) => this.setState({password})}
                 />
 
                 <TextInput style = {styles.input}
@@ -62,26 +74,26 @@ export default class RegisterPassword extends React.Component {
                     placeholderTextColor = "#ccc"
                     autoCapitalize = "none"
                     value={this.state.confirmPassword}
-                    onChange={(confirmPassword)=>{this.setState({confirmPassword})}}
+                    onChangeText={(confirmPassword) => this.setState({confirmPassword})}
                 />
 
-                <Button
-                buttonStyle={{ marginTop: 5 }}
-                backgroundColor="#03A9F4"
-                title="Registar"
-                onPress={() => {
-                    if(this.state.password!=""&this.state.confirmPassword!=""&this.state.usercode!=""){
-                        if(this.passwordValidation(this.state.usercode,this.state.password,this.state.confirmPassword)){
-                            this.props.navigation.navigate("SignIn");
+                <Button buttonStyle={{ marginTop: 5 }} backgroundColor="#03A9F4"
+                    title="Registar Password"
+                    onPress={() => {
+                        if(this.state.password!=""&this.state.confirmPassword!=""&this.state.usercode!=""){
+                            this.passwordValidation(this.state.usercode,this.state.password,this.state.confirmPassword);
                         }else{
-                            this.clearInput();
-                            alert('Palavra passe introduzidas não são iguais');
+                            Alert.alert('Preenche todos os campos');
                         }
-                    }else{
-                        alert('Preenche todos os campos');
-                    }
-                    
-                }}
+                        
+                    }}
+                />
+                <Button
+                    buttonStyle={{ marginTop: 20 }}
+                    backgroundColor="transparent"
+                    textStyle={{ color: "#bcbec1" }}
+                    title="Cancelar"
+                    onPress={() => this.props.navigation.navigate("SignIn")}
                 />
                 <View style={{height: 160}}/>
             </KeyboardAvoidingView>
