@@ -58,7 +58,7 @@ export default class Login extends React.Component {
                 <TextInput style = {styles.input}
                     secureTextEntry={true}
                     underlineColorAndroid = "transparent"
-                    placeholder = "Password"
+                    placeholder = "Palavra-passe"
                     placeholderTextColor = "#7AC4FF"
                     autoCapitalize = "none"
                     value={this.state.password}
@@ -67,7 +67,7 @@ export default class Login extends React.Component {
 
                 <Button 
                     buttonStyle={styles.button}
-                    containerViewStyle={{width: '100%',paddingLeft:15,paddingRight:15}}
+                    containerViewStyle={{width: '100%',paddingLeft:13,paddingRight:13}}
                     backgroundColor="#B7F8DB"
                     textStyle={{ color: "#7AC4FF"}}
                     title="Entrar"
@@ -79,14 +79,19 @@ export default class Login extends React.Component {
                         }
                     }}
                 />
-                <Text style={{color:'#000',marginTop:15,marginBottom:5}}>Não tens conta?</Text>
+                <Text style={{color:'#7AC4FF',textDecorationLine: 'underline',marginTop:10,marginBottom:15}}>
+                    Esqueci-me da palavra-passe
+                </Text>
+                <Text style={{color:'#707070',marginTop:15,marginBottom:5}}>Não tens conta?</Text>
                 <Button
                     buttonStyle={styles.button}
+                    containerViewStyle={{width: '100%',paddingLeft:13,paddingRight:13}}
                     backgroundColor="#B7F8DB"
                     textStyle={{ color: "#7AC4FF"}}
-                    title="Registo"
+                    title="Registar"
                     onPress={() => this.props.navigation.navigate("RegisterPwd")}
                 />
+                
             </View>
         );
     }
