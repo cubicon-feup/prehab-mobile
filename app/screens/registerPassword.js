@@ -60,7 +60,7 @@ export default class RegisterPassword extends React.Component {
                 <TextInput style = {styles.input}
                     secureTextEntry={true}
                     underlineColorAndroid = "transparent"
-                    placeholder = "Novo Password"
+                    placeholder = "Nova palavra-passe"
                     placeholderTextColor = "#ccc"
                     autoCapitalize = "none"
                     value={this.state.password}
@@ -70,15 +70,19 @@ export default class RegisterPassword extends React.Component {
                 <TextInput style = {styles.input}
                     secureTextEntry={true}
                     underlineColorAndroid = "transparent"
-                    placeholder = "Confirmar Password"
+                    placeholder = "Confirmar palavra-passe"
                     placeholderTextColor = "#ccc"
                     autoCapitalize = "none"
                     value={this.state.confirmPassword}
                     onChangeText={(confirmPassword) => this.setState({confirmPassword})}
                 />
 
-                <Button buttonStyle={{ marginTop: 5 }} backgroundColor="#03A9F4"
-                    title="Registar Password"
+                <Button 
+                    buttonStyle={styles.button}
+                    containerViewStyle={{width: '100%',paddingLeft:13,paddingRight:13}}
+                    backgroundColor="#B7F8DB"
+                    textStyle={{ color: "#7AC4FF"}}
+                    title="Registar"
                     onPress={() => {
                         if(this.state.password!=""&this.state.confirmPassword!=""&this.state.usercode!=""){
                             this.passwordValidation(this.state.usercode,this.state.password,this.state.confirmPassword);
@@ -88,14 +92,9 @@ export default class RegisterPassword extends React.Component {
                         
                     }}
                 />
-                <Button
-                    buttonStyle={{ marginTop: 20 }}
-                    backgroundColor="transparent"
-                    textStyle={{ color: "#bcbec1" }}
-                    title="Cancelar"
-                    onPress={() => this.props.navigation.navigate("SignIn")}
-                />
-                <View style={{height: 160}}/>
+                <Text style={{color:'#7AC4FF',marginTop:30}}>Já se encontra registado?      <Text style={{color:'#7AC4FF',textDecorationLine: 'underline'}} onPress={() => this.props.navigation.navigate("SignIn")}>
+                    Entrar
+                </Text></Text>
             </KeyboardAvoidingView>
         );
     }
@@ -105,19 +104,35 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
+      flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
+      padding:36
     },
     input: {
       margin: 10,
-      padding:5,
-      height: 40,
-      width: 252,
-      borderColor: '#000',
-      borderWidth: 1
+      padding:15,
+      alignSelf: 'stretch',
+      height: 48,
+      borderColor: '#BCE0FD',
+      borderWidth: 2,
+      borderRadius:100,
+      textAlign: 'center'
+   },
+   button:{
+    minWidth:93,
+    height:40,
+    borderRadius:100,
+   },
+   fullWidthButton: {
+    flexDirection: 'row',
+    height:40,
+    borderRadius:100,
    },
    logo:{
-      height:152,
-      width: 152
+      height:135,
+      width:135,
+      padding:5,
+      marginTop:25,
+      marginBottom:60
    },
 });
