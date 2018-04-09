@@ -15,41 +15,18 @@ const headerStyle = {
   marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
 };
 
-export const Register = StackNavigator(
-  {
-    RegisterPwd:{
-      screen:RegisterPassword,
-    }
-  },
-  {
-    navigationOptions:{
-        headerStyle:{
-          backgroundColor:'#58678B',
-        },
-        headerTintColor:'#fff',
-        headerTitleStyle:{
-          fontWeight:'bold',
-        },
-      },
-  }
-);
 export const SignedOut = StackNavigator(
   {
     SignIn: {
       screen: SignIn
+    },
+    RegisterPwd:{
+      screen:RegisterPassword,
     }
   },
-  {
-    navigationOptions:{
-        headerStyle:{
-          backgroundColor:'#58678B',
-        },
-        headerTintColor:'#fff',
-        headerTitleStyle:{
-          fontWeight:'bold',
-        },
-      },
-  }
+    {
+      headerMode: 'none'
+    },
 );
 
 export const SignedIn = StackNavigator(
@@ -64,7 +41,7 @@ export const SignedIn = StackNavigator(
   {
     navigationOptions:{
         headerStyle:{
-          backgroundColor:'#58678B',
+          backgroundColor:'#fff',
         },
         headerTintColor:'#fff',
         headerTitleStyle:{
@@ -82,10 +59,7 @@ export const createRootNavigator = (signedIn = false) => {
       },
       SignedOut: {
         screen: SignedOut
-      },
-      RegisterPss:{
-        screen: Register
-      },
+      }
     },
     {
       initialRouteName: signedIn ? "SignedIn" : "SignedOut"

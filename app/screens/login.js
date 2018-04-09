@@ -5,10 +5,6 @@ import { Card, Button, FormLabel, FormInput } from "react-native-elements";
 import {onSignIn} from "../auth";
 
 export default class Login extends React.Component {
-    static navigationOptions = {
-        title:'Autenticação',
-    };
-
     constructor(props) {
         super(props);
         this.state = {
@@ -49,12 +45,12 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <KeyboardAvoidingView style={styles.container} behavior="padding">
+            <View style={styles.container} >
                 <Image source={require('../img/sj.png')} style={styles.logo}/>
                 <TextInput style = {styles.input}
                     underlineColorAndroid = "transparent"
                     placeholder = "Utilizador"
-                    placeholderTextColor = "#ccc"
+                    placeholderTextColor = "#7AC4FF"
                     autoCapitalize = "none"
                     value={this.state.username}
                     onChangeText={(username) => this.setState({username})}
@@ -63,33 +59,35 @@ export default class Login extends React.Component {
                     secureTextEntry={true}
                     underlineColorAndroid = "transparent"
                     placeholder = "Password"
-                    placeholderTextColor = "#ccc"
+                    placeholderTextColor = "#7AC4FF"
                     autoCapitalize = "none"
                     value={this.state.password}
                     onChangeText={(password) => this.setState({password})}
                 />
 
-                <Button
-                buttonStyle={{ marginTop: 5 }}
-                backgroundColor="#03A9F4"
-                title="Entrar"
-                onPress={() => {
-                    if(this.state.password!=""){
-                        this._onSignIn(this.state.username,this.state.password);
-                    }else{
-                        Alert.alert('Introduza a sua password')
-                    }
-                }}
+                <Button 
+                    buttonStyle={styles.button}
+                    containerViewStyle={{width: '100%',paddingLeft:15,paddingRight:15}}
+                    backgroundColor="#B7F8DB"
+                    textStyle={{ color: "#7AC4FF"}}
+                    title="Entrar"
+                    onPress={() => {
+                        if(this.state.password!=""){
+                            this._onSignIn(this.state.username,this.state.password);
+                        }else{
+                            Alert.alert('Introduza a sua password')
+                        }
+                    }}
                 />
+                <Text style={{color:'#000',marginTop:15,marginBottom:5}}>Não tens conta?</Text>
                 <Button
-                    buttonStyle={{ marginTop: 20 }}
-                    backgroundColor="transparent"
-                    textStyle={{ color: "#bcbec1" }}
-                    title="Registar Password"
+                    buttonStyle={styles.button}
+                    backgroundColor="#B7F8DB"
+                    textStyle={{ color: "#7AC4FF"}}
+                    title="Registo"
                     onPress={() => this.props.navigation.navigate("RegisterPwd")}
                 />
-                <View style={{height: 160}}/>
-            </KeyboardAvoidingView>
+            </View>
         );
     }
 }
@@ -99,19 +97,35 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
+      flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
+      padding:36
     },
     input: {
       margin: 10,
-      padding:5,
-      height: 40,
-      width: 252,
-      borderColor: '#000',
-      borderWidth: 1
+      padding:15,
+      alignSelf: 'stretch',
+      height: 48,
+      borderColor: '#BCE0FD',
+      borderWidth: 2,
+      borderRadius:100,
+      textAlign: 'center'
+   },
+   button:{
+    minWidth:93,
+    height:40,
+    borderRadius:100,
+   },
+   fullWidthButton: {
+    flexDirection: 'row',
+    height:40,
+    borderRadius:100,
    },
    logo:{
-      height:152,
-      width: 152,
+      height:135,
+      width:135,
+      padding:5,
+      marginTop:25,
+      marginBottom:60
    },
 });
