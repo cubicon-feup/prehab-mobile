@@ -1,13 +1,22 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Text from './app/config/AppText';
+import React, { Component } from 'react';
 import { NavigationStack } from './app/config/router';
-import PropTypes from 'prop-types';
+import { StyleSheet, Platform, View, Text, Image, TouchableOpacity, YellowBox, Dimensions } from 'react-native';
+import { DrawerNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation'
+import { HomeScreen } from './app/screens/HomeScreen';
+import { ExerciseScreen } from './app/screens/ExerciseScreen';
+import DrawerMenu from './app/data/DrawerMenu';
 
-export default class App extends React.Component {
-  render() {
-    return <NavigationStack />
-
-    ;
+const Drawer = DrawerNavigator(
+  {
+    Main: { screen: NavigationStack }
+  },
+  {
+    contentComponent: DrawerMenu,
+    drawerWidth: Dimensions.get('window').width * 0.5,
+    drawerPosition: 'left',
   }
-}
+);
+
+export default Drawer;
+

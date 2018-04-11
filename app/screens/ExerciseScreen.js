@@ -9,6 +9,44 @@ import { Dimensions } from 'react-native';
 
 export class ExerciseScreen extends Component {
 
+  static navigationOptions = ({ navigation, screenProps }) => ({
+    headerLeft: ( 
+        <TouchableOpacity
+            key={"alert"}
+            onPress={() => navigation.navigate('DrawerOpen')}
+        >
+        <Image
+        resizeMode='cover'
+        style={styles.headerLeft}
+        source={require('../assets/img/menu.png')}
+        />
+        </TouchableOpacity>
+    ),
+    headerTitle: (
+        <Image
+        resizeMode='cover'
+        style={styles.headerTitle}
+        source={require('../assets/img/logo_1.png')}
+        /> 
+    ),
+    headerStyle: {backgroundColor:'#F8F9FE',borderColor:'#F8F9FE'}, 
+    headerTintColor: '#000000', 
+    headerTitleStyle: {textAlign:'center', alignSelf:'center',flex:1,fontSize: 24,fontWeight: "normal",width: "35%" },
+    headerRight: (
+        <TouchableOpacity
+            key={"alert"}
+            onPress={() => navigation.navigate('AlertScreen')}
+        >
+        <Image
+        resizeMode='cover'
+        style={styles.headerRight}
+        source={require('../assets/img/alarm.png')}
+        /> 
+        </TouchableOpacity>
+    ),
+
+})
+
   constructor(props){
     super(props);
     this.state ={ isLoading: true}
@@ -70,7 +108,9 @@ export class ExerciseScreen extends Component {
 
     return (
     <View style={styles.container}>
-      <Swiper style={styles.wrapper} showsButtons showsPagination={false}>
+      <Swiper style={styles.wrapper} showsButtons showsPagination={false}
+      nextButton={<Text style={styles.buttonText}>›</Text>}
+      prevButton={<Text style={styles.buttonText}>‹</Text>}>
         {dayExercises}
       </Swiper>
     </View>
@@ -84,8 +124,33 @@ export class ExerciseScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  buttonText: {
+    color: '#FE005C',
+    fontSize: 50,
+  },
+  headerLeft: {
+    margin: 10,
+    width: 24,
+    height: 24,
+    resizeMode: 'contain',
+    alignSelf: 'center'
+},
+headerTitle: {
+    fontWeight: 'normal',
+    width: 85,
+    height: 85,
+    resizeMode: 'contain',
+    alignSelf: 'center'
+},
+headerRight: {
+    margin: 8,
+    width: 24,
+    height: 24,
+    resizeMode: 'contain',
+    alignSelf: 'center'
+},
   item: {
-    width: Dimensions.get('window').width * 0.7,
+    width: Dimensions.get('window').width * 0.8,
     borderWidth: 2,
     borderColor: '#BCE0FD',
     alignItems: 'center',

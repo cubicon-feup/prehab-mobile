@@ -25,6 +25,7 @@
     "react-native-base": "^1.1.0",
     "react-native-button": "^2.3.0",
     "react-native-collapsible": "^0.10.0",
+    "react-native-drawer-menu": "^0.2.5",
     "react-native-expand": "^1.0.6",
     "react-native-list-popover": "^1.1.1",
     "react-native-material-ui": "^1.22.1",

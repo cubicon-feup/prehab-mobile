@@ -4,18 +4,18 @@ ADDED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/m
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/ea17f15ae26eb2637d8e6eb4da7be8e7/AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4275660456db08010d76730cabf081bd/AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/d4d9d48fe1af89abbdafb06a8bc8aaed/AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/fb2f2a68dfb9053de779500668518580/AndroidManifest.xml:10:1-18:12
-MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/d2b11b39a841776390458ab8865cd997/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/927417d9b695a7918cb78210fedc030b/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/64f7dfc6e7cb86678757b1068f4794aa/AndroidManifest.xml:1:1-4:12
-MERGED from [org.webkit:android-jsc:r174650] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/d065adf248d326ddfa9d147ef60f0aa9/AndroidManifest.xml:1:1-3:12
-MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/3f579ed36327ce1f3209c5bf906d1d21/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/c5e72f05c0d06fcbd70c7e9be5a267b9/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/46515f1f070537e134c9d5caeb65a910/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/575b23e86523a17908bf9af720655642/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/03b8e0d3e0fc0621af4d07e01e52727e/AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4934586f07baedaae46feec76a783246/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/8a75a5739605f321055b774cb9c84ec3/AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/917e58180a63d10aca7c03ebfec6a62a/AndroidManifest.xml:10:1-18:12
+MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/fb1301496cd4da135f9713c7f31d4981/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/a74807164556b4b53e4f0526097ea56e/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/c9a940e34320b8141f7d4ed3efd7751f/AndroidManifest.xml:1:1-4:12
+MERGED from [org.webkit:android-jsc:r174650] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/6b71fa426d2ef81cd494cf3adbbfdebf/AndroidManifest.xml:1:1-3:12
+MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/4a86a120e4382143878d005b8bff9357/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/1aceaac279b0e9e0133e76f29489349a/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/617ba5f543963d7be2e88fa861559c39/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/21dbdadda2a6fc2359de2e1706d3827c/AndroidManifest.xml:2:1-9:12
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:1:1-26:12
@@ -39,22 +39,22 @@ ADDED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/m
 		ADDED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:5:5-77
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/ea17f15ae26eb2637d8e6eb4da7be8e7/AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/ea17f15ae26eb2637d8e6eb4da7be8e7/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/03b8e0d3e0fc0621af4d07e01e52727e/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/03b8e0d3e0fc0621af4d07e01e52727e/AndroidManifest.xml:11:5-78
 	android:name
 		ADDED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:5:22-75
 application
 ADDED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:7:5-24:19
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/ea17f15ae26eb2637d8e6eb4da7be8e7/AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/ea17f15ae26eb2637d8e6eb4da7be8e7/AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4275660456db08010d76730cabf081bd/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4275660456db08010d76730cabf081bd/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/d4d9d48fe1af89abbdafb06a8bc8aaed/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/d4d9d48fe1af89abbdafb06a8bc8aaed/AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/64f7dfc6e7cb86678757b1068f4794aa/AndroidManifest.xml:3:3-17
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/64f7dfc6e7cb86678757b1068f4794aa/AndroidManifest.xml:3:3-17
-MERGED from [org.webkit:android-jsc:r174650] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/d065adf248d326ddfa9d147ef60f0aa9/AndroidManifest.xml:2:3-17
-MERGED from [org.webkit:android-jsc:r174650] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/d065adf248d326ddfa9d147ef60f0aa9/AndroidManifest.xml:2:3-17
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/03b8e0d3e0fc0621af4d07e01e52727e/AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/03b8e0d3e0fc0621af4d07e01e52727e/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4934586f07baedaae46feec76a783246/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4934586f07baedaae46feec76a783246/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/8a75a5739605f321055b774cb9c84ec3/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/8a75a5739605f321055b774cb9c84ec3/AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/c9a940e34320b8141f7d4ed3efd7751f/AndroidManifest.xml:3:3-17
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/c9a940e34320b8141f7d4ed3efd7751f/AndroidManifest.xml:3:3-17
+MERGED from [org.webkit:android-jsc:r174650] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/6b71fa426d2ef81cd494cf3adbbfdebf/AndroidManifest.xml:2:3-17
+MERGED from [org.webkit:android-jsc:r174650] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/6b71fa426d2ef81cd494cf3adbbfdebf/AndroidManifest.xml:2:3-17
 	android:label
 		ADDED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml:9:7-39
 	android:icon
@@ -93,28 +93,28 @@ uses-sdk
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/ea17f15ae26eb2637d8e6eb4da7be8e7/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/ea17f15ae26eb2637d8e6eb4da7be8e7/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4275660456db08010d76730cabf081bd/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4275660456db08010d76730cabf081bd/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/d4d9d48fe1af89abbdafb06a8bc8aaed/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/d4d9d48fe1af89abbdafb06a8bc8aaed/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/fb2f2a68dfb9053de779500668518580/AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/fb2f2a68dfb9053de779500668518580/AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/d2b11b39a841776390458ab8865cd997/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/d2b11b39a841776390458ab8865cd997/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/927417d9b695a7918cb78210fedc030b/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/927417d9b695a7918cb78210fedc030b/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/64f7dfc6e7cb86678757b1068f4794aa/AndroidManifest.xml:2:3-70
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/64f7dfc6e7cb86678757b1068f4794aa/AndroidManifest.xml:2:3-70
-MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/3f579ed36327ce1f3209c5bf906d1d21/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/3f579ed36327ce1f3209c5bf906d1d21/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/c5e72f05c0d06fcbd70c7e9be5a267b9/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/c5e72f05c0d06fcbd70c7e9be5a267b9/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/46515f1f070537e134c9d5caeb65a910/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/46515f1f070537e134c9d5caeb65a910/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/575b23e86523a17908bf9af720655642/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/575b23e86523a17908bf9af720655642/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/03b8e0d3e0fc0621af4d07e01e52727e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/03b8e0d3e0fc0621af4d07e01e52727e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4934586f07baedaae46feec76a783246/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/4934586f07baedaae46feec76a783246/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/8a75a5739605f321055b774cb9c84ec3/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.1] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/8a75a5739605f321055b774cb9c84ec3/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/917e58180a63d10aca7c03ebfec6a62a/AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/917e58180a63d10aca7c03ebfec6a62a/AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/fb1301496cd4da135f9713c7f31d4981/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/fb1301496cd4da135f9713c7f31d4981/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/a74807164556b4b53e4f0526097ea56e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/a74807164556b4b53e4f0526097ea56e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/c9a940e34320b8141f7d4ed3efd7751f/AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/c9a940e34320b8141f7d4ed3efd7751f/AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/4a86a120e4382143878d005b8bff9357/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/4a86a120e4382143878d005b8bff9357/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/1aceaac279b0e9e0133e76f29489349a/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/1aceaac279b0e9e0133e76f29489349a/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/617ba5f543963d7be2e88fa861559c39/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/617ba5f543963d7be2e88fa861559c39/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/21dbdadda2a6fc2359de2e1706d3827c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/marcogoncalves/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/21dbdadda2a6fc2359de2e1706d3827c/AndroidManifest.xml:5:5-7:41
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/marcogoncalves/Documentos/Code/prehab-mobile/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

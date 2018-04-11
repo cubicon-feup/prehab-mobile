@@ -7,6 +7,44 @@ import FlatListItem from '../data/FlatListItem'
 
 export class ExerciseDescription extends React.Component {
 
+  static navigationOptions = ({ navigation, screenProps }) => ({
+    headerLeft: ( 
+        <TouchableOpacity
+            key={"alert"}
+            onPress={() => navigation.navigate('DrawerOpen')}
+        >
+        <Image
+        resizeMode='cover'
+        style={styles.headerLeft}
+        source={require('../assets/img/menu.png')}
+        />
+        </TouchableOpacity>
+    ),
+    headerTitle: (
+        <Image
+        resizeMode='cover'
+        style={styles.headerTitle}
+        source={require('../assets/img/logo_1.png')}
+        /> 
+    ),
+    headerStyle: {backgroundColor:'#F8F9FE',borderColor:'#F8F9FE'}, 
+    headerTintColor: '#000000', 
+    headerTitleStyle: {textAlign:'center', alignSelf:'center',flex:1,fontSize: 24,fontWeight: "normal",width: "35%" },
+    headerRight: (
+        <TouchableOpacity
+            key={"alert"}
+            onPress={() => navigation.navigate('AlertScreen')}
+        >
+        <Image
+        resizeMode='cover'
+        style={styles.headerRight}
+        source={require('../assets/img/alarm.png')}
+        /> 
+        </TouchableOpacity>
+    ),
+
+})
+
   onFinalOk = () => {
     this.props.navigation.navigate('ExerciseFinal', {value: 1});
   }
@@ -72,6 +110,27 @@ export class ExerciseDescription extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    headerLeft: {
+      margin: 10,
+      width: 24,
+      height: 24,
+      resizeMode: 'contain',
+      alignSelf: 'center'
+  },
+  headerTitle: {
+      fontWeight: 'normal',
+      width: 85,
+      height: 85,
+      resizeMode: 'contain',
+      alignSelf: 'center'
+  },
+  headerRight: {
+      margin: 8,
+      width: 24,
+      height: 24,
+      resizeMode: 'contain',
+      alignSelf: 'center'
+  },
   internalView: {
     flex: 1,
     alignContent:'center',

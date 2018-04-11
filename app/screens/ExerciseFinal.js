@@ -11,6 +11,45 @@ export class ExerciseFinal extends React.Component {
         this.props.navigation.navigate('ExerciseScreen');
     }
 
+    static navigationOptions = ({ navigation, screenProps }) => ({
+        headerLeft: ( 
+            <TouchableOpacity
+                key={"alert"}
+                onPress={() => navigation.navigate('ExerciseScreen')}
+            >
+            <Image
+            resizeMode='cover'
+            style={styles.headerLeft}
+            source={require('../assets/img/arrow_left.png')}
+            />
+            </TouchableOpacity>
+        ),
+        headerTitle: (
+            <Image
+            resizeMode='cover'
+            style={styles.headerTitle}
+            source={require('../assets/img/logo_1.png')}
+            /> 
+        ),
+        headerStyle: {backgroundColor:'#F8F9FE',borderColor:'#F8F9FE'}, 
+        headerTintColor: '#000000', 
+        headerTitleStyle: {textAlign:'center', alignSelf:'center',flex:1,fontSize: 24,fontWeight: "normal",width: "35%" },
+        headerRight: (
+            <TouchableOpacity
+                key={"alert"}
+                onPress={() => navigation.navigate('AlertScreen')}
+            >
+            <Image
+            resizeMode='cover'
+            style={styles.headerRight}
+            source={require('../assets/img/alarm.png')}
+            /> 
+            </TouchableOpacity>
+        ),
+    
+    })
+    
+
     render() {
 
         const { params } = this.props.navigation.state;
@@ -56,6 +95,27 @@ export class ExerciseFinal extends React.Component {
 }
 
 const styles = StyleSheet.create({
+        headerLeft: {
+          margin: 10,
+          width: 24,
+          height: 24,
+          resizeMode: 'contain',
+          alignSelf: 'center'
+      },
+      headerTitle: {
+          fontWeight: 'normal',
+          width: 85,
+          height: 85,
+          resizeMode: 'contain',
+          alignSelf: 'center'
+      },
+      headerRight: {
+          margin: 8,
+          width: 24,
+          height: 24,
+          resizeMode: 'contain',
+          alignSelf: 'center'
+      },
     container: {
         flex: 1,
         fontSize:32,
