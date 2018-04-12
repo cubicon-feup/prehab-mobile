@@ -4,7 +4,7 @@ ADDED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidM
 INJECTED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:1:1-26:12
 INJECTED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:1:1-26:12
 INJECTED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:1:1-26:12
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\4f9680ae3d70676ea61b06e84388f80a\AndroidManifest.xml:2:1-15:12
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\71e3c71e0c7c67940f442f9b79a32100\AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\e429a52fd4d1f8a10a5655e93077dd1f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:support-v4:23.0.1] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\support-v4-23.0.1.aar\53e66ae3496a3e960e2cad731bcc799b\AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\a63a39aa8fa6da283a9708acbedf0328\AndroidManifest.xml:10:1-18:12
@@ -39,14 +39,14 @@ ADDED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidM
 		ADDED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:5:5-77
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\4f9680ae3d70676ea61b06e84388f80a\AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\4f9680ae3d70676ea61b06e84388f80a\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\71e3c71e0c7c67940f442f9b79a32100\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\71e3c71e0c7c67940f442f9b79a32100\AndroidManifest.xml:11:5-78
 	android:name
 		ADDED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:5:22-75
 application
 ADDED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml:7:5-24:19
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\4f9680ae3d70676ea61b06e84388f80a\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\4f9680ae3d70676ea61b06e84388f80a\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\71e3c71e0c7c67940f442f9b79a32100\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\71e3c71e0c7c67940f442f9b79a32100\AndroidManifest.xml:13:5-20
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\e429a52fd4d1f8a10a5655e93077dd1f\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\e429a52fd4d1f8a10a5655e93077dd1f\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\support-v4-23.0.1.aar\53e66ae3496a3e960e2cad731bcc799b\AndroidManifest.xml:22:5-20
@@ -93,8 +93,8 @@ uses-sdk
 INJECTED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\FEUP\LGP_GPIE\projects\prehab-mobile\android\app\src\main\AndroidManifest.xml
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\4f9680ae3d70676ea61b06e84388f80a\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.54.0] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.0.aar\4f9680ae3d70676ea61b06e84388f80a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\71e3c71e0c7c67940f442f9b79a32100\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\71e3c71e0c7c67940f442f9b79a32100\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\e429a52fd4d1f8a10a5655e93077dd1f\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\e429a52fd4d1f8a10a5655e93077dd1f\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.0.1] C:\Users\IL0016G\.gradle\caches\transforms-1\files-1.1\support-v4-23.0.1.aar\53e66ae3496a3e960e2cad731bcc799b\AndroidManifest.xml:20:5-43

@@ -60,7 +60,7 @@ constructor(props){
       return (
         <View key={i} style={styles.slide}>
           <Text style={styles.title}>Nutrição</Text>
-          <Text style={styles.data}>{day.date}</Text>
+          <Text style={styles.title}>{day.date}</Text>
           
           <View style={styles.list}>
             <FlatList 
@@ -91,9 +91,13 @@ constructor(props){
 
     return (
     <View style={styles.container}>
-      <Swiper style={styles.wrapper} showsButtons showsPagination={false} 
-      nextButton={<Text style={styles.buttonText}>›</Text>}
-      prevButton={<Text style={styles.buttonText}>‹</Text>}>
+      <Swiper style={styles.wrapper}
+              showsButtons
+              showsPagination={false}
+              loop={false}
+              nextButton={<Text style={styles.buttonText}>›</Text>}
+              prevButton={<Text style={styles.buttonText}>‹</Text>}
+      >
         {dayExercises}
       </Swiper>
     </View>

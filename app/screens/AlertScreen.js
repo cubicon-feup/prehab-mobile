@@ -41,8 +41,7 @@ export class AlertScreen extends React.Component {
         /> 
         </TouchableOpacity>
     ),
-
-})
+  });
 
   render() {
     return (

@@ -169,6 +169,6 @@ var styles = StyleSheet.create({
         color: '#323BEA',
         fontWeight: 'normal',
         marginTop: 16,
-        fontSize: 24,
+        fontSize: 30,
     },
 });

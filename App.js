@@ -7,16 +7,34 @@ import { HomeScreen } from './app/screens/HomeScreen';
 import { ExerciseScreen } from './app/screens/ExerciseScreen';
 import DrawerMenu from './app/data/DrawerMenu';
 
-const Drawer = DrawerNavigator(
-  {
-    Main: { screen: NavigationStack }
-  },
-  {
-    contentComponent: DrawerMenu,
-    drawerWidth: Dimensions.get('window').width * 0.5,
-    drawerPosition: 'left',
+import { createRootNavigator } from './app/config/router';
+import { isSignedIn } from "./app/config/auth";
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      signedIn: false,
+      checkedSignIn: false
+    };
   }
-);
 
-export default Drawer;
+  componentDidMount() {
+    isSignedIn()
+      .then(res => this.setState({ signedIn: res, checkedSignIn: true }))
+      .catch(err => alert("An error occurred"));
+  }
 
+  render() {
+    const { checkedSignIn, signedIn } = this.state;
+
+    // If we haven't checked AsyncStorage yet, don't render anything (better ways to do this)
+    if (!checkedSignIn) {
+      return null;
+    }
+
+    const Layout = createRootNavigator(signedIn);
+    return <Layout />;
+  }
+}

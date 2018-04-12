@@ -8,6 +8,7 @@ import {
   Dimensions
 } from "react-native";
 
+import { onSignOut } from "../config/auth";
 import { NavigationActions } from "react-navigation";
 
 class DrawerMenu extends Component {
@@ -37,7 +38,7 @@ class DrawerMenu extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.menuItem}
-          //onPress={() => this._navigate("ExerciseScreen", { isStatusBarHidden: false })}
+          onPress={() => onSignOut().then(() => this.props.navigation.navigate("SignedOut"))}
         >
           <Text style={styles.menuItemText}>Sair</Text>
         </TouchableOpacity>

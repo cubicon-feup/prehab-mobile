@@ -76,8 +76,7 @@ export class ExerciseScreen extends Component {
     const dayExercises = flatListData.map((day, i) => { 
       return (
         <View key={i} style={styles.slide}>
-          <Text style={styles.title}>Exercício físico</Text>
-          <Text style={styles.data}>{day.date}</Text>
+          <Text style={styles.title}>Exercício físico para {day.date}</Text>
           
           <View style={styles.list}>
             <FlatList 
@@ -108,9 +107,13 @@ export class ExerciseScreen extends Component {
 
     return (
     <View style={styles.container}>
-      <Swiper style={styles.wrapper} showsButtons showsPagination={false}
-      nextButton={<Text style={styles.buttonText}>›</Text>}
-      prevButton={<Text style={styles.buttonText}>‹</Text>}>
+      <Swiper style={styles.wrapper}
+              showsButtons
+              showsPagination={false}
+              loop={false}
+              nextButton={<Text style={styles.buttonText}>›</Text>}
+              prevButton={<Text style={styles.buttonText}>‹</Text>}
+      >
         {dayExercises}
       </Swiper>
     </View>
@@ -134,21 +137,21 @@ const styles = StyleSheet.create({
     height: 24,
     resizeMode: 'contain',
     alignSelf: 'center'
-},
-headerTitle: {
-    fontWeight: 'normal',
-    width: 85,
-    height: 85,
-    resizeMode: 'contain',
-    alignSelf: 'center'
-},
-headerRight: {
-    margin: 8,
-    width: 24,
-    height: 24,
-    resizeMode: 'contain',
-    alignSelf: 'center'
-},
+  },
+  headerTitle: {
+      fontWeight: 'normal',
+      width: 85,
+      height: 85,
+      resizeMode: 'contain',
+      alignSelf: 'center'
+  },
+  headerRight: {
+      margin: 8,
+      width: 24,
+      height: 24,
+      resizeMode: 'contain',
+      alignSelf: 'center'
+  },
   item: {
     width: Dimensions.get('window').width * 0.8,
     borderWidth: 2,

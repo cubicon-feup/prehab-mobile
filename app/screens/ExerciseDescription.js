@@ -110,12 +110,12 @@ export class ExerciseDescription extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    headerLeft: {
-      margin: 10,
-      width: 24,
-      height: 24,
-      resizeMode: 'contain',
-      alignSelf: 'center'
+  headerLeft: {
+    margin: 10,
+    width: 24,
+    height: 24,
+    resizeMode: 'contain',
+    alignSelf: 'center'
   },
   headerTitle: {
       fontWeight: 'normal',
