@@ -68,16 +68,8 @@ export const Register = StackNavigator(
       }
     },
     {
-      navigationOptions:{
-          headerStyle:{
-            backgroundColor:'#58678B',
-          },
-          headerTintColor:'#fff',
-          headerTitleStyle:{
-            fontWeight:'bold',
-          },
-        },
-    }
+      headerMode: 'none'
+    },
 );
 export const SignedOut = StackNavigator(
     {
@@ -86,18 +78,9 @@ export const SignedOut = StackNavigator(
         }
     },
     {
-        navigationOptions:{
-            headerStyle:{
-            backgroundColor:'#58678B',
-            },
-            headerTintColor:'#fff',
-            headerTitleStyle:{
-            fontWeight:'bold',
-            },
-        },
-    }
+      headerMode: 'none'
+    },
 );
-
 
 export const SignedIn = DrawerNavigator(
     {
