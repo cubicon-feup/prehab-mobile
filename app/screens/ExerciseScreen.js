@@ -76,8 +76,8 @@ export class ExerciseScreen extends Component {
     const dayExercises = flatListData.map((day, i) => { 
       return (
         <View key={i} style={styles.slide}>
-          <Text style={styles.title}>Exercício físico para {day.date}</Text>
-          
+          <Text style={styles.title}>Exercício físico</Text>
+          <Text style={styles.data}>{day.date}</Text>
           <View style={styles.list}>
             <FlatList 
               data={day.exercises}
@@ -180,14 +180,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '300',
     marginTop:10,
-    marginBottom: 20,
+    marginBottom: 5,
     color:'#323BEA'
   },
   data: {
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: '300',
-    marginTop:10,
+    marginTop:5,
     marginBottom: 20,
     color:'#323BEA'
   },
