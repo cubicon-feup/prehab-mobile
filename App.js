@@ -10,6 +10,8 @@ import DrawerMenu from './app/data/DrawerMenu';
 import { createRootNavigator } from './app/config/router';
 import { isSignedIn } from "./app/config/auth";
 
+console.disableYellowBox = true;
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
