@@ -29,6 +29,7 @@ export default class Login extends React.Component {
             headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
+            'platform':'mobile',
             },
             body: JSON.stringify({
             username: username,

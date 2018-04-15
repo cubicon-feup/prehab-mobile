@@ -60,7 +60,7 @@ constructor(props){
       return (
         <View key={i} style={styles.slide}>
           <Text style={styles.title}>Nutrição</Text>
-          <Text style={styles.title}>{day.date}</Text>
+          <Text style={styles.data}>{day.date}</Text>
           
           <View style={styles.list}>
             <FlatList 

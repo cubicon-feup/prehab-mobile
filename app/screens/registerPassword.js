@@ -25,6 +25,7 @@ export default class RegisterPassword extends React.Component {
                 headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
+                'platform':'mobile',
                 },
                 body: JSON.stringify({
                     activation_code: usercode.toString(),
