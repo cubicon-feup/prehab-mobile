@@ -40,7 +40,7 @@ export default class FlatListItem extends Component {
       padding: 10,
       marginBottom: 5,
       fontSize: 20, 
-      textAlign: 'center' 
+      flexDirection: 'row',
     },
     externalView: {
       flex: 1,
