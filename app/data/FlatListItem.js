@@ -4,12 +4,14 @@ import Text from '../config/AppText';
 import PropTypes from 'prop-types';
 
 export default class FlatListItem extends Component {
-    render() {          
+    render() {      
         return (        
             <View style={styles.externalView}>            
                 <View style={styles.internalView}>            
                     <View style={styles.viewText}>
-                      <Text style={styles.flatListItem}>{this.props.item.name}</Text>
+                      <Text style={styles.flatListItem}>
+                        {this.props.item.title}
+                      </Text>
                     </View>  
                     <Image 
                         source={require('../assets/img/arrow_right.png')}

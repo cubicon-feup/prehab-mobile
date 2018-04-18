@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Alert,Image, TextInput,KeyboardAvoidingView,Dimensions} from 'react-native';
+import { Alert,Image, TextInput, KeyboardAvoidingView, Dimensions} from 'react-native';
 import { Card, Button, FormLabel, FormInput } from "react-native-elements";
+import { onRegisterPassword } from "../config/auth";
+import PrehabApi from '../services/PrehabApi';
 
 export default class RegisterPassword extends React.Component {
     constructor(props) {
@@ -12,29 +14,21 @@ export default class RegisterPassword extends React.Component {
             confirmPassword:'',
         };
         this.baseState = this.state;
+        this.prehabApi = new PrehabApi();
     }
 
     clearInput(){
         this.setState(this.baseState);
     }
 
-    passwordValidation(usercode,password,confirmPassword){        
-        if(password==confirmPassword){
-            fetch('http://ec2-35-176-153-210.eu-west-2.compute.amazonaws.com/api/user/activate/', {
-                method: 'POST',
-                headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    activation_code: usercode.toString(),
-                    password: password.toString(),
-                }),
-            }).then(response => {
-                if(response.status === 200){
-                    onSignIn().then(() => this.props.navigation.navigate("SignIn"));
-                }else{
-                   alert('Operação não Efetuada');                
+    passwordValidation(usercode, password, confirmPassword){        
+        if(password == confirmPassword){
+            this.prehabApi.registerPassword(usercode, password)
+            .then(response => {
+                if (response.status === 200){
+                    onRegisterPassword().then(() => this.props.navigation.navigate("SignIn"));
+                } else {
+                   alert('Operação não efetuada');                
                 }
             }).catch(error => {
                 console.error(error);
