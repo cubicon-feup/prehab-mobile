@@ -24,7 +24,7 @@ export default class Login extends React.Component {
     }
 
     _onSignIn (username,password){
-        fetch('http://ec2-35-176-153-210.eu-west-2.compute.amazonaws.com/api/login/', {
+        fetch('http://ec2-18-130-0-119.eu-west-2.compute.amazonaws.com/api/login/', {
             method: 'POST',
             headers: {
             Accept: 'application/json',

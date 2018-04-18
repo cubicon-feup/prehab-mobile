@@ -52,11 +52,13 @@ export class HomeScreen extends React.Component {
                     key={"exercise"}
                     style={styles.item}
                     onPress={() => this.onExercise()}
-                >
+                >   
+                    <View style={styles.circle}>
                     <Image
                         style={styles.itemIcon}
-                        source={require('../assets/img/cardiogram.png')}
+                        source={require('../assets/img/exercicio.png')}
                     />
+                    </View>
                     <Text style={styles.itemTitle}>
                         {"Exercício"}
                     </Text>
@@ -66,11 +68,13 @@ export class HomeScreen extends React.Component {
                     key={"nutrition"}
                     style={styles.item}
                     onPress={() => this.onNutrition()}
-                >
+                >   
+                    <View style={styles.circle}>
                     <Image
                         style={styles.itemIcon}
-                        source={require('../assets/img/restaurant.png')}
+                        source={require('../assets/img/nutricao.png')}
                     />
+                    </View>
                     <Text style={styles.itemTitle}>
                         {"Nutrição"}
                     </Text>
@@ -81,10 +85,12 @@ export class HomeScreen extends React.Component {
                     style={styles.item}
                     onPress={() => this.onAlert()}
                 >
+                    <View style={styles.circle}>
                     <Image
                         style={styles.itemIcon}
-                        source={require('../assets/img/bell.png')}
+                        source={require('../assets/img/agenda.png')}
                     />
+                    </View>
                     <Text style={styles.itemTitle}>
                         {"Alertas"}
                     </Text>
@@ -95,10 +101,12 @@ export class HomeScreen extends React.Component {
                     style={styles.item}
                     onPress={() => this.onHelp()}
                 >
+                    <View style={styles.circle}>
                     <Image
                         style={styles.itemIcon}
-                        source={require('../assets/img/ambulance.png')}
+                        source={require('../assets/img/ajuda.png')}
                     />
+                    </View>
                     <Text style={styles.itemTitle}>
                         {"Ajuda"}
                     </Text>
@@ -126,6 +134,17 @@ export class HomeScreen extends React.Component {
 }
 
 var styles = StyleSheet.create({
+    circle: {
+        width: Dimensions.get('window').width * 0.45,
+        height: Dimensions.get('window').width * 0.45,
+        backgroundColor: '#FFFFFF',
+        borderWidth: 2,
+        borderColor: '#FFFFFF',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius:100,
+        margin: 2,
+    },
     headerLeft: {
         margin: 10,
         width: 24,
@@ -155,8 +174,8 @@ var styles = StyleSheet.create({
         width: Dimensions.get('window').width * 0.5,
         height: 300,
         borderWidth: 1,
-        backgroundColor: "#FFFFFF",
-        borderColor: "#FFFFFF",
+        backgroundColor: "#F8F9FE",
+        borderColor: "#F8F9FE",
         alignItems: 'center',
         justifyContent: 'center'        
     },

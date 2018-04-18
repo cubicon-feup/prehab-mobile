@@ -101,11 +101,16 @@ constructor(props){
 
 const styles = StyleSheet.create({
     list_item: {
-      fontSize: 15,
+      fontSize: 16,
+      color: '#4B5FE7',
+      marginLeft: 20,
+      marginBottom: 20,
     },
     list_sub_header: {
       fontSize: 17,
       fontWeight :'bold',
+      color: '#4B5FE7',
+      marginLeft: 20,
     },
     buttonText: {
         color: '#FE005C',

@@ -133,6 +133,9 @@ var styles = StyleSheet.create({
         height: 32, 
         margin: 12,
         alignContent:'flex-end'
+    },
+    body: {
+        width: Dimensions.get('window').width * 1.5,
     }
 });
 
