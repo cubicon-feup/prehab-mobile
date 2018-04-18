@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Text from '../config/AppText';
 import flatListData from '../data/flatListData';
 import PropTypes from 'prop-types';
 import FlatListItem from '../data/FlatListItem';
 import { Dimensions } from 'react-native';
+import PrehabApi from "../services/PrehabApi";
 
 export class ExerciseScreen extends Component {
 
@@ -49,38 +50,50 @@ export class ExerciseScreen extends Component {
 
   constructor(props){
     super(props);
-    this.state ={ isLoading: true}
+    this.state = { isLoading: true}
+    this.prehabApi = new PrehabApi();
   }
 
   componentDidMount(){
-    let apiRoute;
-    /*
-    return fetch(apiRoute)
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState({
-          isLoading: false,
-          dataSource: responseJson,
-        }, function(){
+    
+    this.prehabApi.getPrehabPlan()
+    .then((response) => response.json())
+    .then((responseJson) => {
+        if (responseJson.code === 200) {
+          this.setState({
+            isLoading: false,
+            taskSchedule: responseJson.data.task_schedule,
+          }, function(){
+          });
 
-        });
-
-      })
-      .catch((error) =>{
+        } else {          
+        }
+    }).catch(error => {
         console.error(error);
-      });
-    */
+    });
   }
 
   render() {
-    const dayExercises = flatListData.map((day, i) => { 
+
+    if (this.state.isLoading) {
+      return(
+        <View style={styles.activityIndicatorContainer}>
+          <ActivityIndicator size = "large" style = {styles.activityIndicator}/>
+        </View>
+      )
+    }
+
+    const dayExercises = Object.entries(this.state.taskSchedule).map((exercises, i) => { 
+      let date = Object.keys(this.state.taskSchedule)[i];
+      let tasks = this.state.taskSchedule[date];
+
       return (
         <View key={i} style={styles.slide}>
           <Text style={styles.title}>Exercício físico</Text>
-          <Text style={styles.data}>{day.date}</Text>
+          <Text style={styles.data}>{date}</Text>
           <View style={styles.list}>
             <FlatList 
-              data={day.exercises}
+              data={tasks}
               keyExtractor={(item, index) => 'list-item-${index}'}
               renderItem={ ({item}) => {
                 return (
@@ -88,8 +101,13 @@ export class ExerciseScreen extends Component {
                     <TouchableOpacity
                       key={"exerciseDescription"}
                       onPress={() => this.props.navigation.navigate('ExerciseDescription',{
-                        dia:day.date,name: item['name'],descricao:item['description']})
-                      }
+                        id: item['id'],
+                        title: item['title'],
+                        description: item['description'],
+                        multimediaURL: item['multimedia_link'],
+                        status: item['status'],
+                        taskType: item['task_type']
+                      })}
                       style={styles.item}
                     > 
                       <FlatListItem item={item}></FlatListItem>
@@ -100,23 +118,22 @@ export class ExerciseScreen extends Component {
             >
             </FlatList>
           </View>
-          
         </View>
       );
     });
 
     return (
-    <View style={styles.container}>
-      <Swiper style={styles.wrapper}
-              showsButtons
-              showsPagination={false}
-              loop={false}
-              nextButton={<Text style={styles.buttonText}>›</Text>}
-              prevButton={<Text style={styles.buttonText}>‹</Text>}
-      >
-        {dayExercises}
-      </Swiper>
-    </View>
+      <View style={styles.container}>
+        <Swiper style={styles.wrapper}
+                showsButtons
+                showsPagination={false}
+                loop={false}
+                nextButton={<Text style={styles.buttonText}>›</Text>}
+                prevButton={<Text style={styles.buttonText}>‹</Text>}
+        >
+          {dayExercises}
+        </Swiper>
+      </View>
     );
   }
 
@@ -220,4 +237,16 @@ const styles = StyleSheet.create({
   },
   slide: {
   },
+  activityIndicatorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 30
+  },
+  activityIndicator: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 80
+  }
 });

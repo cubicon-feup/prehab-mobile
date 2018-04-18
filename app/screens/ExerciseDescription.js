@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity, Dimensions} from 'react-native';
 import Text from '../config/AppText';
 import PropTypes from 'prop-types';
 import Button from 'react-native-button'
@@ -60,48 +60,48 @@ export class ExerciseDescription extends React.Component {
   render() {
 
     const { params } = this.props.navigation.state;
-    const dia = params ? params.dia : null;
-    const name = params ? params.name : null;
-    const descricao = params ? params.descricao : null;
+    
+    const id = params ? params.id : null;
+    const title = params ? params.title : null;
+    const description = params ? params.description : null;
+    const multimediaURL = params ? params.multimediaURL : null;
+    const status = params ? params.status : null;
+    const taskType = params ? params.taskType : null;
 
     return (
     <View style={styles.containerBack}>  
-      <Text style={styles.title}>Exercício físico</Text>  
-      <Text style={styles.data}>{dia}</Text>
-        <TouchableOpacity
-              key={"description"}
-              onPress={() => this.onBack()}
-              style={styles.opacity}
-            >   
-        <View style={styles.externalView}> 
-          <View style={styles.internalView}>  
-            <Image 
-              source={require('../assets/img/arrow_left.png')}
-              style={styles.imageView}
-            />          
-            <View style={styles.viewText}>
-              <Text style={styles.flatListItem}>{name}</Text>
-            </View> 
-          </View>
+      <Text style={styles.title}>{title}</Text>  
+
+      <Text style={{padding: 10, fontSize: 25}}>
+        {description}
+      </Text>
+      
+      <View style={styles.multimediaContainer}>
+        <Image 
+          style={styles.itemIcon}
+          source={{uri: multimediaURL}}
+        />
       </View>
-      </TouchableOpacity>  
+
       <View style={styles.container}>
         <Button
         style={styles.buttonContainerR}
         onPress={() => this.onFinalNotOk()}>
-        Reportar dificuldade
+          Reportar dificuldade
         </Button>
+        
         <View style={styles.containerB}>
-        <Button
-        style={styles.buttonContainerC}
-        onPress={() => this.onFinalOk()}>
-        Cumprido
-        </Button>
-        <Button
-        style={styles.buttonContainerF}
-        onPress={() => this.onFinalNotOk()}>
-        Não Cumprido
-        </Button>
+          <Button
+          style={styles.buttonContainerC}
+          onPress={() => this.onFinalOk()}>
+            Cumprido
+          </Button>
+          
+          <Button
+          style={styles.buttonContainerF}
+          onPress={() => this.onFinalNotOk()}>
+            Não Cumprido
+          </Button>
         </View>
       </View>
     </View>  
@@ -226,5 +226,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     margin: 5,
+  },
+  itemIcon: {
+    width: Dimensions.get('window').width * 0.6,
+    height: 250,
+    resizeMode: 'contain',
+  },
+  multimediaContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });

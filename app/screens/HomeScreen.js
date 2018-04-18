@@ -44,85 +44,85 @@ export class HomeScreen extends React.Component {
 
     })
 
-  render() {
-    return (
-        <ScrollView>
-            <View style={styles.container}>
-                <TouchableOpacity
-                    key={"exercise"}
-                    style={styles.item}
-                    onPress={() => this.onExercise()}
-                >
-                    <Image
-                        style={styles.itemIcon}
-                        source={require('../assets/img/cardiogram.png')}
-                    />
-                    <Text style={styles.itemTitle}>
-                        {"Exercício"}
-                    </Text>
-                </TouchableOpacity>
+    render() {
+        return (
+            <ScrollView>
+                <View style={styles.container}>
+                    <TouchableOpacity
+                        key={"exercise"}
+                        style={styles.item}
+                        onPress={() => this.onExercise()}
+                    >
+                        <Image
+                            style={styles.itemIcon}
+                            source={require('../assets/img/cardiogram.png')}
+                        />
+                        <Text style={styles.itemTitle}>
+                            {"Exercício"}
+                        </Text>
+                    </TouchableOpacity>
 
-                <TouchableOpacity
-                    key={"nutrition"}
-                    style={styles.item}
-                    onPress={() => this.onNutrition()}
-                >
-                    <Image
-                        style={styles.itemIcon}
-                        source={require('../assets/img/restaurant.png')}
-                    />
-                    <Text style={styles.itemTitle}>
-                        {"Nutrição"}
-                    </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity
+                        key={"nutrition"}
+                        style={styles.item}
+                        onPress={() => this.onNutrition()}
+                    >
+                        <Image
+                            style={styles.itemIcon}
+                            source={require('../assets/img/restaurant.png')}
+                        />
+                        <Text style={styles.itemTitle}>
+                            {"Nutrição"}
+                        </Text>
+                    </TouchableOpacity>
 
-                <TouchableOpacity
-                    key={"alerts"}
-                    style={styles.item}
-                    onPress={() => this.onAlert()}
-                >
-                    <Image
-                        style={styles.itemIcon}
-                        source={require('../assets/img/bell.png')}
-                    />
-                    <Text style={styles.itemTitle}>
-                        {"Alertas"}
-                    </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity
+                        key={"alerts"}
+                        style={styles.item}
+                        onPress={() => this.onAlert()}
+                    >
+                        <Image
+                            style={styles.itemIcon}
+                            source={require('../assets/img/bell.png')}
+                        />
+                        <Text style={styles.itemTitle}>
+                            {"Alertas"}
+                        </Text>
+                    </TouchableOpacity>
 
-                <TouchableOpacity
-                    key={"help"}
-                    style={styles.item}
-                    onPress={() => this.onHelp()}
-                >
-                    <Image
-                        style={styles.itemIcon}
-                        source={require('../assets/img/ambulance.png')}
-                    />
-                    <Text style={styles.itemTitle}>
-                        {"Ajuda"}
-                    </Text>
-                </TouchableOpacity>     
-            </View>
-        </ScrollView>
-    );
-  }
+                    <TouchableOpacity
+                        key={"help"}
+                        style={styles.item}
+                        onPress={() => this.onHelp()}
+                    >
+                        <Image
+                            style={styles.itemIcon}
+                            source={require('../assets/img/ambulance.png')}
+                        />
+                        <Text style={styles.itemTitle}>
+                            {"Ajuda"}
+                        </Text>
+                    </TouchableOpacity>     
+                </View>
+            </ScrollView>
+        );
+    }
 
-  onExercise = () => {
-      this.props.navigation.navigate('ExerciseScreen');
-  }
+    onExercise = () => {
+        this.props.navigation.navigate('ExerciseScreen');
+    }
 
-  onNutrition = () => {
-      this.props.navigation.navigate('NutritionScreen');
-  }
+    onNutrition = () => {
+        this.props.navigation.navigate('NutritionScreen');
+    }
 
-  onAlert = () => {
-      this.props.navigation.navigate('AlertScreen');
-  }
+    onAlert = () => {
+        this.props.navigation.navigate('AlertScreen');
+    }
 
-  onHelp = () => {
-    this.props.navigation.navigate('HelpScreen');
-}
+    onHelp = () => {
+        this.props.navigation.navigate('HelpScreen');
+    }
 }
 
 var styles = StyleSheet.create({

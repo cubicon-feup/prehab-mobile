@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Alert,Image, TextInput,KeyboardAvoidingView,Dimensions} from 'react-native';
 import { Card, Button, FormLabel, FormInput } from "react-native-elements";
-import {onSignIn} from "../config/auth";
+import { onSignIn } from "../config/auth";
+import PrehabApi from "../services/PrehabApi";
 
 export default class Login extends React.Component {
     static navigationOptions = {
@@ -17,34 +18,28 @@ export default class Login extends React.Component {
             isLoading: true,
         };
         this.baseState = this.state;
+        this.prehabApi = new PrehabApi();
     }
     
     clearInput(){
         this.setState(this.baseState);
     }
 
-    _onSignIn (username,password){
-        fetch('http://ec2-35-176-153-210.eu-west-2.compute.amazonaws.com/api/login/', {
-            method: 'POST',
-            headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-            username: username,
-            password: password,
-            }),
-        }).then(response => {
-            if(response.status === 200){
-                onSignIn().then(() => this.props.navigation.navigate("SignedIn"));
-            }else{
+    _onSignIn(username, password) {
+        this.prehabApi.signIn(username, password)
+        .then((response) => response.json())
+        .then((responseJson) => {
+            if (responseJson.code === 200) {
+                let apiToken = responseJson.data.jwt;
+                let prehabId = '' + responseJson.data.prehab_id;
+                onSignIn(apiToken, prehabId).then(() => this.props.navigation.navigate("SignedIn"));
+            } else {
                 this.clearInput();
                 Alert.alert('Utilizador ou Password errado');                
             }
         }).catch(error => {
             console.error(error);
         });
-        
     };
 
     render() {
