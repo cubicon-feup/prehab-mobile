@@ -27,7 +27,7 @@ export class ExerciseScreen extends Component {
         <Image
         resizeMode='cover'
         style={styles.headerTitle}
-        source={require('../assets/img/logo_1.png')}
+        source={require('../assets/img/logo_1_alt.png')}
         /> 
     ),
     headerStyle: {backgroundColor:'#F8F9FE',borderColor:'#F8F9FE'}, 
@@ -78,7 +78,7 @@ export class ExerciseScreen extends Component {
     if (this.state.isLoading) {
       return(
         <View style={styles.activityIndicatorContainer}>
-          <ActivityIndicator size = "large" style = {styles.activityIndicator}/>
+          <ActivityIndicator size="large" style={styles.activityIndicator} color="#FE005C"/>
         </View>
       )
     }
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 30
+    marginTop: 20
   },
   activityIndicator: {
     flex: 1,

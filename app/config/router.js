@@ -13,7 +13,6 @@ import { FontAwesome } from "react-native-vector-icons";
 
 import RegisterPassword from "../screens/registerPassword";
 import SignIn from "../screens/login";
-import Home from "../screens/home";
 
 import Text from '../config/AppText';
 

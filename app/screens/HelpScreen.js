@@ -22,7 +22,7 @@ export class HelpScreen extends React.Component {
         <Image
         resizeMode='cover'
         style={styles.headerTitle}
-        source={require('../assets/img/logo_1.png')}
+        source={require('../assets/img/logo_1_alt.png')}
         /> 
     ),
     headerStyle: {backgroundColor:'#F8F9FE',borderColor:'#F8F9FE'}, 
