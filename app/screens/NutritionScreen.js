@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Text from '../config/AppText';
 import flatListNutrition from '../data/flatListNutrition';
 import PropTypes from 'prop-types';
-import FlatListItemNutrition from '../data/FlatListItemNutrition';
-import { Dimensions } from 'react-native';
+import Panel from '../data/Panel';
 
 export class NutritionScreen extends React.Component {
 
@@ -59,32 +58,27 @@ constructor(props){
     const dayExercises = flatListNutrition.map((day, i) => { 
       return (
         <View key={i} style={styles.slide}>
-          <Text style={styles.title}>Nutrição</Text>
-          <Text style={styles.title}>{day.date}</Text>
-          
-          <View style={styles.list}>
-            <FlatList 
+        <Text style={styles.title}>Nutrição</Text>
+        <Text style={styles.data}>{day.date}</Text>
+        <FlatList 
               data={day.exercises}
-              keyExtractor={(item, index) => 'list-item-${index}'}
+              keyExtractor={(item, index) => 'scroll-view-${index}'}
               renderItem={ ({item}) => {
                 return (
-                  <View style={styles.itemContainer}>
-                    <TouchableOpacity
-                      key={"exerciseDescription"}
-                      onPress={() => this.props.navigation.navigate('ExerciseDescription',{
-                        dia:day.date,name: item['name'],descricao:item['description']})
-                      }
-                      style={styles.item}
-                    > 
-                      <FlatListItemNutrition item={item}></FlatListItemNutrition>
-                    </TouchableOpacity>
-                  </View>
+                <View style={styles.list}>
+                    <Panel title = {item['name']}>
+                      <View style={{flex: 1, flexDirection: 'row'}}>
+                        <View style={{flex: .5, flexDirection: 'column'}} >
+                          <Text style={styles.list_sub_header}> Alimentos: </Text>
+                          <Text style={styles.list_item}> {item['description']}</Text>
+                        </View>
+                      </View>
+                    </Panel>
+                </View>
                 );
-              }}
-            >
-            </FlatList>
-          </View>
-          
+        }}    
+        >
+        </FlatList>
         </View>
       );
     });
@@ -103,14 +97,21 @@ constructor(props){
     </View>
     );
   }
-
-  onDescription = () => {
-    this.props.navigation.navigate('ExerciseDescription',{dia:day.date});
-    
-  }
 }
 
 const styles = StyleSheet.create({
+    list_item: {
+      fontSize: 16,
+      color: '#4B5FE7',
+      marginLeft: 20,
+      marginBottom: 20,
+    },
+    list_sub_header: {
+      fontSize: 17,
+      fontWeight :'bold',
+      color: '#4B5FE7',
+      marginLeft: 20,
+    },
     buttonText: {
         color: '#FE005C',
         fontSize: 50,
@@ -146,10 +147,6 @@ const styles = StyleSheet.create({
       overflow: 'hidden',
       margin: 2,
     },
-    itemContainer: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-    },
     list: {
       alignItems: 'center',
       justifyContent: 'center',
@@ -165,41 +162,16 @@ const styles = StyleSheet.create({
       fontSize: 32,
       fontWeight: '300',
       marginTop:10,
-      marginBottom: 20,
+      marginBottom: 5,
       color:'#323BEA'
     },
     data: {
       textAlign: 'center',
-      fontSize: 16,
+      fontSize: 24,
       fontWeight: '300',
-      marginTop:10,
+      marginTop:5,
       marginBottom: 20,
       color:'#323BEA'
-    },
-    flatListItem: {
-      color:'#323BEA',
-      fontSize: 23, 
-      textAlign: 'center' 
-    },
-    externalView: {
-      flex: 1,
-      flexDirection:'row',
-      margin: 8
-    },
-    internalView: {
-      flex: 1,
-      flexDirection:'row',            
-    },
-    viewText: {
-      flex: 1,
-      flexDirection:'column',   
-      height: 42
-    },
-    imageView: {
-      width: 32, 
-      height: 32, 
-      margin: 5,
-      alignContent:'flex-end'
     },
     wrapper: {  
     },

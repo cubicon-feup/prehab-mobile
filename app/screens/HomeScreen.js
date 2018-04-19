@@ -44,69 +44,77 @@ export class HomeScreen extends React.Component {
 
     })
 
-    render() {
-        return (
-            <ScrollView>
-                <View style={styles.container}>
-                    <TouchableOpacity
-                        key={"exercise"}
-                        style={styles.item}
-                        onPress={() => this.onExercise()}
-                    >
-                        <Image
-                            style={styles.itemIcon}
-                            source={require('../assets/img/cardiogram.png')}
-                        />
-                        <Text style={styles.itemTitle}>
-                            {"Exercício"}
-                        </Text>
-                    </TouchableOpacity>
+  render() {
+    return (
+        <ScrollView>
+            <View style={styles.container}>
+                <TouchableOpacity
+                    key={"exercise"}
+                    style={styles.item}
+                    onPress={() => this.onExercise()}
+                >   
+                    <View style={styles.circle}>
+                    <Image
+                        style={styles.itemIcon}
+                        source={require('../assets/img/exercicio.png')}
+                    />
+                    </View>
+                    <Text style={styles.itemTitle}>
+                        {"Exercício"}
+                    </Text>
+                </TouchableOpacity>
 
-                    <TouchableOpacity
-                        key={"nutrition"}
-                        style={styles.item}
-                        onPress={() => this.onNutrition()}
-                    >
-                        <Image
-                            style={styles.itemIcon}
-                            source={require('../assets/img/restaurant.png')}
-                        />
-                        <Text style={styles.itemTitle}>
-                            {"Nutrição"}
-                        </Text>
-                    </TouchableOpacity>
+                <TouchableOpacity
+                    key={"nutrition"}
+                    style={styles.item}
+                    onPress={() => this.onNutrition()}
+                >   
+                    <View style={styles.circle}>
+                    <Image
+                        style={styles.itemIcon}
+                        source={require('../assets/img/nutricao.png')}
+                    />
+                    </View>
+                    <Text style={styles.itemTitle}>
+                        {"Nutrição"}
+                    </Text>
+                </TouchableOpacity>
 
-                    <TouchableOpacity
-                        key={"alerts"}
-                        style={styles.item}
-                        onPress={() => this.onAlert()}
-                    >
-                        <Image
-                            style={styles.itemIcon}
-                            source={require('../assets/img/bell.png')}
-                        />
-                        <Text style={styles.itemTitle}>
-                            {"Alertas"}
-                        </Text>
-                    </TouchableOpacity>
+                <TouchableOpacity
+                    key={"alerts"}
+                    style={styles.item}
+                    onPress={() => this.onAlert()}
+                >
+                    <View style={styles.circle}>
+                    <Image
+                        style={styles.itemIcon}
+                        source={require('../assets/img/agenda.png')}
+                    />
+                    </View>
+                    <Text style={styles.itemTitle}>
+                        {"Alertas"}
+                    </Text>
+                </TouchableOpacity>
 
-                    <TouchableOpacity
-                        key={"help"}
-                        style={styles.item}
-                        onPress={() => this.onHelp()}
-                    >
-                        <Image
-                            style={styles.itemIcon}
-                            source={require('../assets/img/ambulance.png')}
-                        />
-                        <Text style={styles.itemTitle}>
-                            {"Ajuda"}
-                        </Text>
-                    </TouchableOpacity>     
-                </View>
-            </ScrollView>
-        );
-    }
+                <TouchableOpacity
+                    key={"help"}
+                    style={styles.item}
+                    onPress={() => this.onHelp()}
+                >
+                    <View style={styles.circle}>
+                    <Image
+                        style={styles.itemIcon}
+                        source={require('../assets/img/ajuda.png')}
+                    />
+                    </View>
+                    <Text style={styles.itemTitle}>
+                        {"Ajuda"}
+                    </Text>
+                </TouchableOpacity>     
+            </View>
+        </ScrollView>
+    );
+  }
 
     onExercise = () => {
         this.props.navigation.navigate('ExerciseScreen');
@@ -126,6 +134,17 @@ export class HomeScreen extends React.Component {
 }
 
 var styles = StyleSheet.create({
+    circle: {
+        width: Dimensions.get('window').width * 0.45,
+        height: Dimensions.get('window').width * 0.45,
+        backgroundColor: '#FFFFFF',
+        borderWidth: 2,
+        borderColor: '#FFFFFF',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius:100,
+        margin: 2,
+    },
     headerLeft: {
         margin: 10,
         width: 24,
@@ -155,8 +174,8 @@ var styles = StyleSheet.create({
         width: Dimensions.get('window').width * 0.5,
         height: 300,
         borderWidth: 1,
-        backgroundColor: "#FFFFFF",
-        borderColor: "#FFFFFF",
+        backgroundColor: "#F8F9FE",
+        borderColor: "#F8F9FE",
         alignItems: 'center',
         justifyContent: 'center'        
     },

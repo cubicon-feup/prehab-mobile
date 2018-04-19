@@ -18,6 +18,7 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "expo": "^25.0.0",
     "native-base": "^2.4.1",
     "react": "16.3.0-alpha.1",
     "react-native": "^0.54.0",
@@ -26,7 +27,9 @@
     "react-native-button": "^2.3.0",
     "react-native-collapsible": "^0.10.0",
     "react-native-drawer-menu": "^0.2.5",
+    "react-native-elements": "^0.19.0",
     "react-native-expand": "^1.0.6",
+    "react-native-keyboard-aware-scroll-view": "^0.5.0",
     "react-native-list-popover": "^1.1.1",
     "react-native-material-ui": "^1.22.1",
     "react-native-modal-dropdown": "^0.6.2",
@@ -34,10 +37,7 @@
     "react-native-swiper": "^1.5.13",
     "react-native-toolbar-component": "0.0.1",
     "react-native-vector-icons": "^4.6.0",
-    "react-navigation": "^1.5.10",
-    "expo": "^25.0.0",
-    "react-native-elements": "^0.19.0",
-    "react-native-keyboard-aware-scroll-view": "^0.5.0"
+    "react-navigation": "^1.5.10"
   },
   "rnpm": {
     "assets": [

@@ -5,7 +5,7 @@ var flatListData = [
             {
                 "id": "598a678278fee204ee51cd2c",
                 "name": "Pequeno Almoço",
-                "description": "1. Lorem ipsum 2.Lorem ipsum 3.Lorem ipsum",
+                "description": "Hidratos e Proteina: Pão com queijo fresco e fiambre. Nota: beber 1 litro de agua até as 14 horas.",
                 "gifUrl": "https://image.ibb.co/hjpDhH/move_to_the_next_page_symbol_1.png",                    
             },
             {
