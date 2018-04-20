@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import Button from 'react-native-button'
 import FlatListItem from '../data/FlatListItem'
 
+import { NavigationActions } from 'react-navigation';
+
 export class ExerciseFinal extends React.Component {
 
     onBack = () => {
@@ -49,13 +51,11 @@ export class ExerciseFinal extends React.Component {
     
     })
     
-
     render() {
-
         const { params } = this.props.navigation.state;
         const value = params ? params.value : null;
 
-        if(value==1){
+        if (value == 1) {
             return (
                 <View style={styles.container}>
                 <TouchableOpacity
@@ -65,14 +65,13 @@ export class ExerciseFinal extends React.Component {
                 >
                 <Text style={styles.text}>Boa!</Text>   
                 <Image
-                        style={styles.itemIcon}
-                        source={require('../assets/img/accomplished.png')}
+                    style={styles.itemIcon}
+                    source={require('../assets/img/accomplished.png')}
                 />
                 </TouchableOpacity>
                 </View>  
             );
-        }
-        else{
+        } else {
             return (
                 <View style={styles.container}>
                 <TouchableOpacity
@@ -82,8 +81,8 @@ export class ExerciseFinal extends React.Component {
                 >
                 <Text style={styles.text}>Então?</Text>   
                 <Image
-                        style={styles.itemIcon}
-                        source={require('../assets/img/notAccomplished.png')}
+                    style={styles.itemIcon}
+                    source={require('../assets/img/notAccomplished.png')}
                 />
                 </TouchableOpacity>
                 </View>  

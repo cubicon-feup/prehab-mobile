@@ -1,9 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity, Dimensions} from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity, Dimensions, Alert} from 'react-native';
 import Text from '../config/AppText';
 import PropTypes from 'prop-types';
 import Button from 'react-native-button'
 import FlatListItem from '../data/FlatListItem'
+import PrehabApi from '../services/PrehabApi';
+
+import { NavigationActions } from 'react-navigation';
 
 export class ExerciseDescription extends React.Component {
 
@@ -42,15 +45,119 @@ export class ExerciseDescription extends React.Component {
         /> 
         </TouchableOpacity>
     ),
+  })
 
-})
+  constructor(props) {
+    super(props);
+    this.prehabApi = new PrehabApi();
+  }
+
+  resetNavigation(targetRoute, taskExecution) {
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName: targetRoute }, {value: taskExecution}),
+      ],
+    });
+    this.props.navigation.dispatch(resetAction);
+  }
 
   onFinalOk = () => {
-    this.props.navigation.navigate('ExerciseFinal', {value: 1});
+
+    Alert.alert(
+      'Confirmação',
+      'Pretende confirmar que executou esta tarefa?',
+      [
+        {text: 'Não', onPress: () => {}, style: 'cancel'},
+        {text: 'Sim', onPress: () => {
+          
+          Alert.alert(
+            'Dificuldades',
+            'Teve alguma dificuldade em executar esta tarefa?',
+            [
+              { text: 'Não', onPress: () => {
+
+                this.prehabApi.executeTaskWithoutDifficulties(this.props.navigation.state.id, true)
+                .then((response) => response.json())
+                .then((responseJson) => {
+                    if (responseJson.code === 200) {
+                      this.props.navigation.navigate('ExerciseFinal', {value: 1});
+                    } else {          
+                    }
+                }).catch(error => {
+                    console.error(error);
+                });
+
+              }, style: 'cancel'},
+
+              { text: 'Sim', onPress: () => {
+                this.prehabApi.executeTaskWithDifficulties(this.props.navigation.state.id, true, "")
+                .then((response) => response.json())
+                .then((responseJson) => {
+                    if (responseJson.code === 200) {
+                      this.props.navigation.navigate('ExerciseFinal', {value: 1});
+                    } else {          
+                    }
+                }).catch(error => {
+                    console.error(error);
+                });
+              }},
+            ],
+            { cancelable: false }
+          )
+        }},
+      ],
+      { cancelable: false }
+    )
   }
 
   onFinalNotOk = () => {
-    this.props.navigation.navigate('ExerciseFinal', {value: 0});
+
+    Alert.alert(
+      'Confirmação',
+      'Pretende confirmar que não executou esta tarefa?',
+      [
+        {text: 'Não', onPress: () => {}, style: 'cancel'},
+        {text: 'Sim', onPress: () => {
+            
+          Alert.alert(
+            'Dificuldades',
+            'Não executou esta tarefa porque teve alguma dificuldade?',
+            [
+              {text: 'Não', onPress: () => {
+
+                this.prehabApi.executeTaskWithoutDifficulties(this.props.navigation.state.id, false)
+                .then((response) => response.json())
+                .then((responseJson) => {
+                    if (responseJson.code === 200) {
+                      this.props.navigation.navigate('ExerciseFinal', {value: 1});
+                    } else {          
+                    }
+                }).catch(error => {
+                    console.error(error);
+                });
+
+              }, style: 'cancel'},
+              { text: 'Sim', onPress: () => {
+
+                this.prehabApi.executeTaskWithDifficulties(this.props.navigation.state.id, false, "")
+                .then((response) => response.json())
+                .then((responseJson) => {
+                    if (responseJson.code === 200) {
+                      this.props.navigation.navigate('ExerciseFinal', {value: 1});
+                    } else {          
+                    }
+                }).catch(error => {
+                    console.error(error);
+                });
+              }},
+            ],
+            { cancelable: false }
+          )
+        }},
+      ],
+      { cancelable: false }
+    )
   }
 
   onBack = () => {
@@ -84,12 +191,6 @@ export class ExerciseDescription extends React.Component {
       </View>
 
       <View style={styles.container}>
-        <Button
-        style={styles.buttonContainerR}
-        onPress={() => this.onFinalNotOk()}>
-          Reportar dificuldade
-        </Button>
-        
         <View style={styles.containerB}>
           <Button
           style={styles.buttonContainerC}

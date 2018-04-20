@@ -45,8 +45,7 @@ export class ExerciseScreen extends Component {
         /> 
         </TouchableOpacity>
     ),
-
-})
+  })
 
   constructor(props){
     super(props);
@@ -55,7 +54,6 @@ export class ExerciseScreen extends Component {
   }
 
   componentDidMount(){
-    
     this.prehabApi.getPrehabPlan()
     .then((response) => response.json())
     .then((responseJson) => {
