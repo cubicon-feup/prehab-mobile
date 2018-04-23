@@ -45,8 +45,7 @@ export class ExerciseScreen extends Component {
         /> 
         </TouchableOpacity>
     ),
-
-})
+  })
 
   constructor(props){
     super(props);
@@ -55,7 +54,6 @@ export class ExerciseScreen extends Component {
   }
 
   componentDidMount(){
-    
     this.prehabApi.getPrehabPlan()
     .then((response) => response.json())
     .then((responseJson) => {
@@ -100,14 +98,18 @@ export class ExerciseScreen extends Component {
                   <View style={styles.itemContainer}>
                     <TouchableOpacity
                       key={"exerciseDescription"}
-                      onPress={() => this.props.navigation.navigate('ExerciseDescription',{
-                        id: item['id'],
-                        title: item['title'],
-                        description: item['description'],
-                        multimediaURL: item['multimedia_link'],
-                        status: item['status'],
-                        taskType: item['task_type']
-                      })}
+                      onPress={() => {
+                        if (item['status'] === "Pending") {
+                          this.props.navigation.navigate('ExerciseDescription',{
+                            id: item['id'],
+                            title: item['title'],
+                            description: item['description'],
+                            multimediaURL: item['multimedia_link'],
+                            status: item['status'],
+                            taskType: item['task_type']
+                          })
+                        }
+                      }}
                       style={styles.item}
                     > 
                       <FlatListItem item={item}></FlatListItem>

@@ -8,7 +8,7 @@ export default class PrehabApi extends React.Component {
 
     constructor(props) {
         super(props);
-        this.API_URL = 'http://ec2-18-130-0-119.eu-west-2.compute.amazonaws.com/api/';
+        this.API_URL = 'http://prehab.cubicon.xyz:8000/api/';
     }
 
     signIn(username, password) {        
@@ -49,8 +49,8 @@ export default class PrehabApi extends React.Component {
         let apiToken;
         let prehabId;
 
-        let data = await AsyncStorage.multiGet([API_TOKEN, PREHAB_ID])
-        
+        let data = await AsyncStorage.multiGet([API_TOKEN, PREHAB_ID]);
+
         apiToken = data[0][1];
         prehabId = data[1][1];
         
@@ -64,6 +64,63 @@ export default class PrehabApi extends React.Component {
                 'platform' : 'mobile',
                 'jwt' : apiToken
             },
+        });
+    }
+
+    async executeTaskWithoutDifficulties(taskId, hasExecuted) {
+        let apiToken;
+        let prehabId;
+
+        let data = await AsyncStorage.multiGet([API_TOKEN, PREHAB_ID]);
+        
+        apiToken = data[0][1];
+        prehabId = data[1][1];
+        
+        let executeTaskUrl = this.API_URL + "patient/schedule/task/done/";
+
+        return fetch(executeTaskUrl, {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'platform' : 'mobile',
+                'jwt' : apiToken
+            },
+            body: JSON.stringify({
+                prehab_id: Number(prehabId),
+                patient_task_schedule_id: Number(taskId),
+                completed: hasExecuted,
+                difficulties: false,
+            }),
+        });
+    }
+
+    async executeTaskWithDifficulties(taskId, hasExecuted, difficulties) {
+        let apiToken;
+        let prehabId;
+
+        let data = await AsyncStorage.multiGet([API_TOKEN, PREHAB_ID]);
+        
+        apiToken = data[0][1];
+        prehabId = data[1][1];
+        
+        let executeTaskUrl = this.API_URL + "patient/schedule/task/done/";
+
+        return fetch(executeTaskUrl, {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'platform' : 'mobile',
+                'jwt' : apiToken
+            },
+            body: JSON.stringify({
+                prehab_id: Number(prehabId),
+                patient_task_schedule_id: Number(taskId),
+                completed: hasExecuted,
+                difficulties: true//,
+                //notes: difficulties,
+            }),
         });
     }
 
