@@ -63,6 +63,8 @@ export class ExerciseDescription extends React.Component {
   }
 
   onFinalOk = () => {
+    let { params } = this.props.navigation.state;
+    let taskId = params.id;
 
     Alert.alert(
       'Confirmação',
@@ -76,8 +78,8 @@ export class ExerciseDescription extends React.Component {
             'Teve alguma dificuldade em executar esta tarefa?',
             [
               { text: 'Não', onPress: () => {
-
-                this.prehabApi.executeTaskWithoutDifficulties(this.props.navigation.state.id, true)
+                console.log("CLICKED");
+                this.prehabApi.executeTaskWithoutDifficulties(taskId, true)
                 .then((response) => response.json())
                 .then((responseJson) => {
                     if (responseJson.code === 200) {
@@ -91,7 +93,7 @@ export class ExerciseDescription extends React.Component {
               }, style: 'cancel'},
 
               { text: 'Sim', onPress: () => {
-                this.prehabApi.executeTaskWithDifficulties(this.props.navigation.state.id, true, "")
+                this.prehabApi.executeTaskWithDifficulties(taskId, true, "")
                 .then((response) => response.json())
                 .then((responseJson) => {
                     if (responseJson.code === 200) {
@@ -112,6 +114,8 @@ export class ExerciseDescription extends React.Component {
   }
 
   onFinalNotOk = () => {
+    let { params } = this.props.navigation.state;
+    let taskId = params.id;
 
     Alert.alert(
       'Confirmação',
@@ -126,11 +130,11 @@ export class ExerciseDescription extends React.Component {
             [
               {text: 'Não', onPress: () => {
 
-                this.prehabApi.executeTaskWithoutDifficulties(this.props.navigation.state.id, false)
+                this.prehabApi.executeTaskWithoutDifficulties(taskId, false)
                 .then((response) => response.json())
                 .then((responseJson) => {
                     if (responseJson.code === 200) {
-                      this.props.navigation.navigate('ExerciseFinal', {value: 1});
+                      this.props.navigation.navigate('ExerciseFinal', {value: -1});
                     } else {          
                     }
                 }).catch(error => {
@@ -140,11 +144,11 @@ export class ExerciseDescription extends React.Component {
               }, style: 'cancel'},
               { text: 'Sim', onPress: () => {
 
-                this.prehabApi.executeTaskWithDifficulties(this.props.navigation.state.id, false, "")
+                this.prehabApi.executeTaskWithDifficulties(taskId, false, "")
                 .then((response) => response.json())
                 .then((responseJson) => {
                     if (responseJson.code === 200) {
-                      this.props.navigation.navigate('ExerciseFinal', {value: 1});
+                      this.props.navigation.navigate('ExerciseFinal', {value: -1});
                     } else {          
                     }
                 }).catch(error => {

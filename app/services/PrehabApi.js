@@ -8,7 +8,7 @@ export default class PrehabApi extends React.Component {
 
     constructor(props) {
         super(props);
-        this.API_URL = 'http://ec2-18-130-0-119.eu-west-2.compute.amazonaws.com/api/';
+        this.API_URL = 'http://prehab.cubicon.xyz:8000/api/';
     }
 
     signIn(username, password) {        
@@ -76,10 +76,10 @@ export default class PrehabApi extends React.Component {
         apiToken = data[0][1];
         prehabId = data[1][1];
         
-        let executeTaskUrl = this.API_URL + "patient/schedule/task/";
+        let executeTaskUrl = this.API_URL + "patient/schedule/task/done/";
 
         return fetch(executeTaskUrl, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -104,10 +104,10 @@ export default class PrehabApi extends React.Component {
         apiToken = data[0][1];
         prehabId = data[1][1];
         
-        let executeTaskUrl = this.API_URL + "patient/schedule/task/";
+        let executeTaskUrl = this.API_URL + "patient/schedule/task/done/";
 
         return fetch(executeTaskUrl, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -118,8 +118,8 @@ export default class PrehabApi extends React.Component {
                 prehab_id: Number(prehabId),
                 patient_task_schedule_id: Number(taskId),
                 completed: hasExecuted,
-                difficulties: true,
-                notes: difficulties,
+                difficulties: true//,
+                //notes: difficulties,
             }),
         });
     }
