@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity, ActivityIndicator, Dimensions } from 'react-native';
 import Swiper from 'react-native-swiper';
+import moment from "moment";
 import Text from '../config/AppText';
 import flatListData from '../data/flatListData';
 import PropTypes from 'prop-types';
@@ -48,7 +49,7 @@ export class ExerciseScreen extends Component {
 
   constructor(props){
     super(props);
-    this.state = { isLoading: true}
+    this.state = { isLoading: true, initialIndex: 0}
     this.prehabApi = new PrehabApi();
   }
 
@@ -56,22 +57,45 @@ export class ExerciseScreen extends Component {
     this.prehabApi.getPrehabPlan()
     .then((response) => response.json())
     .then((responseJson) => {
-        if (responseJson.code === 200) {
-          this.setState({
-            isLoading: false,
-            taskSchedule: responseJson.data.task_schedule,
-          }, function(){
-          });
+      if (responseJson.code === 200) {
 
-        } else {          
-        }
+        let index = 0;
+
+        Object.entries(responseJson.data.task_schedule).map((exercises, i) => { 
+          const unorderedSchedule = responseJson.data.task_schedule;
+          const ordered = {};
+          
+          Object.keys(unorderedSchedule).sort(this.sortDate).forEach(function(key) {
+            ordered[key] = unorderedSchedule[key];
+          });
+    
+          let date = Object.keys(ordered)[i];
+
+          if (moment(date).isSame(moment(), 'day')) {
+            index = i;
+          }
+
+        });
+
+        this.setState({
+          isLoading: false,
+          taskSchedule: responseJson.data.task_schedule,
+          initialIndex: index,
+        }, function(){
+        });
+
+      } else {          
+      }
     }).catch(error => {
         console.error(error);
     });
   }
 
-  render() {
+  sortDate(a, b) {
+    return new Date(a).getTime() - new Date(b).getTime();
+  }
 
+  render() {
     if (this.state.isLoading) {
       return(
         <View style={styles.activityIndicatorContainer}>
@@ -81,8 +105,15 @@ export class ExerciseScreen extends Component {
     }
 
     const dayExercises = Object.entries(this.state.taskSchedule).map((exercises, i) => { 
-      let date = Object.keys(this.state.taskSchedule)[i];
-      let tasks = this.state.taskSchedule[date];
+
+      const orderedSchedule = {};
+      const unorderedSchedule = this.state.taskSchedule;
+      Object.keys(unorderedSchedule).sort(this.sortDate).forEach(function(key) {
+        orderedSchedule[key] = unorderedSchedule[key];
+      });
+
+      let date = Object.keys(orderedSchedule)[i];
+      let tasks = orderedSchedule[date];
 
       return (
         <View key={i} style={styles.slide}>
@@ -131,6 +162,7 @@ export class ExerciseScreen extends Component {
                 loop={false}
                 nextButton={<Text style={styles.buttonText}>›</Text>}
                 prevButton={<Text style={styles.buttonText}>‹</Text>}
+                index={this.state.initialIndex}
         >
           {dayExercises}
         </Swiper>
@@ -138,10 +170,6 @@ export class ExerciseScreen extends Component {
     );
   }
 
-  onDescription = () => {
-    this.props.navigation.navigate('ExerciseDescription',{dia:day.date});
-    
-  }
 }
 
 const styles = StyleSheet.create({
