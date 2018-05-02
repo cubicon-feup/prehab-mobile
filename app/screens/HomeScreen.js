@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Button, ScrollView, TouchableOpacity, Image, Icon} from 'react-native';
+import { StyleSheet, View, Button, ScrollView, TouchableOpacity, Image, Icon, Dimensions} from 'react-native';
 import Text from '../config/AppText';
-import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 
 export class HomeScreen extends React.Component {
@@ -153,10 +152,13 @@ var styles = StyleSheet.create({
         alignSelf: 'center'
     },
     headerTitle: {
+        flex:1,
         fontWeight: 'normal',
         width: 85,
-        height: 85,
+        height: Dimensions.get('window').width * 0.09,
+        justifyContent: 'center',
         resizeMode: 'contain',
+        textAlign: 'center',
         alignSelf: 'center'
     },
     headerRight: {

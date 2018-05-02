@@ -223,9 +223,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   headerTitle: {
+      flex:1,
       fontWeight: 'normal',
       width: 85,
-      height: 85,
+      height: Dimensions.get('window').width * 0.09,
       resizeMode: 'contain',
       alignSelf: 'center'
   },

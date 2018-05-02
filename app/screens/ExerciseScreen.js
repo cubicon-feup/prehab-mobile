@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity, ActivityIndicator, Dimensions } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Text from '../config/AppText';
 import flatListData from '../data/flatListData';
 import PropTypes from 'prop-types';
 import FlatListItem from '../data/FlatListItem';
-import { Dimensions } from 'react-native';
 import PrehabApi from "../services/PrehabApi";
 
 export class ExerciseScreen extends Component {
@@ -158,9 +157,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   headerTitle: {
+      flex:1,
       fontWeight: 'normal',
       width: 85,
-      height: 85,
+      height: Dimensions.get('window').width * 0.09,
       resizeMode: 'contain',
       alignSelf: 'center'
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity,Dimensions} from 'react-native';
 import Text from '../config/AppText';
 import PropTypes from 'prop-types';
 import Button from 'react-native-button'
@@ -55,6 +55,11 @@ export class ExerciseFinal extends React.Component {
         const { params } = this.props.navigation.state;
         const value = params ? params.value : null;
 
+        var myShowsDone = ['Boa!', 'Continue assim!', 'Assim mesmo!', 'É este o caminho!','Parabéns!', 'Muito bem!', 'Estás a ficar um atleta!', 'Já falta pouco, boa!','És um guerreiro!'];
+        var showDone = myShowsDone[Math.floor(Math.random() * myShowsDone.length)];
+        var myShowsNotDone = ['Então?', 'Oh, então?', 'Não desistas!', 'Amanhã será melhor!','Já falta pouco, força!', 'Tu consegues!', 'És o melhor, força!'];
+        var showNotDone = myShowsNotDone[Math.floor(Math.random() * myShowsNotDone.length)];
+
         if (value == 1) {
             return (
                 <View style={styles.container}>
@@ -63,7 +68,7 @@ export class ExerciseFinal extends React.Component {
                     style={styles.item}
                     onPress={() => this.onBack()}
                 >
-                <Text style={styles.text}>Boa!</Text>   
+                <Text style={styles.text}>{showDone}</Text>   
                 <Image
                     style={styles.itemIcon}
                     source={require('../assets/img/accomplished.png')}
@@ -79,7 +84,7 @@ export class ExerciseFinal extends React.Component {
                     style={styles.item}
                     onPress={() => this.onBack()}
                 >
-                <Text style={styles.text}>Então?</Text>   
+                <Text style={styles.text}>{showNotDone}</Text>   
                 <Image
                     style={styles.itemIcon}
                     source={require('../assets/img/notAccomplished.png')}
@@ -94,7 +99,7 @@ export class ExerciseFinal extends React.Component {
 }
 
 const styles = StyleSheet.create({
-        headerLeft: {
+      headerLeft: {
           margin: 10,
           width: 24,
           height: 24,
@@ -102,9 +107,10 @@ const styles = StyleSheet.create({
           alignSelf: 'center'
       },
       headerTitle: {
+          flex:1,
           fontWeight: 'normal',
           width: 85,
-          height: 85,
+          height: Dimensions.get('window').width * 0.09,
           resizeMode: 'contain',
           alignSelf: 'center'
       },
