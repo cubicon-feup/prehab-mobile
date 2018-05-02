@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Button, ScrollView, TouchableOpacity, Image, Icon} from 'react-native';
+import { StyleSheet, View, Button, ScrollView, TouchableOpacity, Image, Icon, Dimensions} from 'react-native';
 import Text from '../config/AppText';
-import { Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 
 export class AlertScreen extends React.Component {
@@ -61,9 +60,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
 },
 headerTitle: {
+    flex:1,
     fontWeight: 'normal',
     width: 85,
-    height: 85,
+    height: Dimensions.get('window').width * 0.09,
     resizeMode: 'contain',
     alignSelf: 'center'
 },

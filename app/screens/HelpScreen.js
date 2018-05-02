@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image, Dimensions } from 'react-native';
 import Text from '../config/AppText';
 import PropTypes from 'prop-types';
 
@@ -60,9 +60,10 @@ const styles = StyleSheet.create({
       alignSelf: 'center'
   },
   headerTitle: {
+      flex:1,
       fontWeight: 'normal',
       width: 85,
-      height: 85,
+      height: Dimensions.get('window').width * 0.09,
       resizeMode: 'contain',
       alignSelf: 'center'
   },
