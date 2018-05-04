@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, View, ListView, TouchableHighlight, FlatList, Image, TouchableOpacity, Dimensions, ActivityIndicator, ScrollView } from 'react-native';
 import Swiper from 'react-native-swiper';
+import moment from "moment";
 import Text from '../config/AppText';
 import flatListNutrition from '../data/flatListNutrition';
 import PropTypes from 'prop-types';
 import Panel from '../data/Panel';
+import PrehabApi from '../services/PrehabApi';
 
 export class NutritionScreen extends React.Component {
 
@@ -46,27 +48,85 @@ export class NutritionScreen extends React.Component {
 
 })
 constructor(props){
-    super(props);
-    this.state ={ isLoading: true}
+  super(props);
+  this.state = { isLoading: true, initialIndex: 0}
+  this.prehabApi = new PrehabApi();
   }
 
   componentDidMount(){
-    let apiRoute;
+    this.prehabApi.getPrehabNutrition()
+    .then((response) => response.json())
+    .then((responseJson) => {
+      if (responseJson.code === 200) {
+
+        let index = 0;
+
+        Object.entries(responseJson.data.meal_schedule).map((nutrition, i) => { 
+          const unorderedSchedule = responseJson.data.meal_schedule;
+          const ordered = {};
+          
+          Object.keys(unorderedSchedule).sort(this.sortDate).forEach(function(key) {
+            ordered[key] = unorderedSchedule[key];
+          });
+    
+          let date = Object.keys(ordered)[i];
+
+          if (moment(date).isSame(moment(), 'day')) {
+            index = i;
+          }
+
+        });
+
+        this.setState({
+          isLoading: false,
+          taskSchedule: responseJson.data.meal_schedule,
+          initialIndex: index,
+        }, function(){
+        });
+
+      } else {          
+      }
+    }).catch(error => {
+        console.error(error);
+    });
+  }
+
+  sortDate(a, b) {
+    return new Date(a).getTime() - new Date(b).getTime();
   }
 
   render() {
-    const dayExercises = flatListNutrition.map((day, i) => { 
+
+    if (this.state.isLoading) {
+      return(
+        <View style={styles.activityIndicatorContainer}>
+          <ActivityIndicator size="large" style={styles.activityIndicator} color="#FE005C"/>
+        </View>
+      )
+    }
+
+    const dayExercises = Object.entries(this.state.taskSchedule).map((nutrition, i) => { 
+
+      const orderedSchedule = {};
+      const unorderedSchedule = this.state.taskSchedule;
+      Object.keys(unorderedSchedule).sort(this.sortDate).forEach(function(key) {
+        orderedSchedule[key] = unorderedSchedule[key];
+      });
+
+      let date = Object.keys(orderedSchedule)[i];
+      let tasks = orderedSchedule[date];
+
       return (
         <View key={i} style={styles.slide}>
         <Text style={styles.title}>Nutrição</Text>
-        <Text style={styles.data}>{day.date}</Text>
+        <Text style={styles.data}>{date}</Text>
         <FlatList 
-              data={day.exercises}
+              data={tasks}
               keyExtractor={(item, index) => 'scroll-view-${index}'}
               renderItem={ ({item}) => {
                 return (
                 <View style={styles.list}>
-                    <Panel title = {item['name']}>
+                    <Panel title = {item['meal_order']}>
                       <View style={{flex: 1, flexDirection: 'row'}}>
                         <View style={{flex: .5, flexDirection: 'column'}} >
                           <Text style={styles.list_sub_header}> Alimentos: </Text>
@@ -178,4 +238,16 @@ const styles = StyleSheet.create({
     },
     slide: {
     },
+    activityIndicatorContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 20
+    },
+    activityIndicator: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 80
+    }
   });

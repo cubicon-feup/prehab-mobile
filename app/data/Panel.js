@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {StyleSheet,View,Image,TouchableHighlight,Animated,Dimensions} from 'react-native';
 import Text from '../config/AppText';
+import PrehabApi from '../services/PrehabApi';
 
 class Panel extends Component{
     constructor(props){
@@ -93,11 +94,11 @@ var styles = StyleSheet.create({
         flex: 1,
         flexDirection:'row',
         margin: 8
-      },
-      internalView: {
+    },
+    internalView: {
         flex: 1,
         flexDirection:'row',            
-      },
+    },
     header: {
       color:'#323BEA',
       padding: 4,
