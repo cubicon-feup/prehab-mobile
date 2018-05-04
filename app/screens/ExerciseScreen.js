@@ -7,7 +7,6 @@ import flatListData from '../data/flatListData';
 import PropTypes from 'prop-types';
 import FlatListItem from '../data/FlatListItem';
 import PrehabApi from "../services/PrehabApi";
-
 export class ExerciseScreen extends Component {
 
   static navigationOptions = ({ navigation, screenProps }) => ({

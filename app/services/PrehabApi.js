@@ -67,6 +67,28 @@ export default class PrehabApi extends React.Component {
         });
     }
 
+    async getPrehabNutrition() {
+        let apiToken;
+        let prehabId;
+
+        let data = await AsyncStorage.multiGet([API_TOKEN, PREHAB_ID]);
+
+        apiToken = data[0][1];
+        prehabId = data[1][1];
+        
+        let prehabNutritionUrl = this.API_URL + "prehab/" + prehabId + "/";
+
+        return fetch(prehabNutritionUrl, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'platform' : 'mobile',
+                'jwt' : apiToken
+            },
+        });
+    }
+
     async executeTaskWithoutDifficulties(taskId, hasExecuted) {
         let apiToken;
         let prehabId;

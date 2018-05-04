@@ -45,39 +45,62 @@ export class HelpScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>This is the help screen!</Text>
+        <Text style={styles.titulo}>Ajuda</Text>
+        <Text style={styles.ajuda}>Precisa de ajuda?</Text>
+        <Text style={styles.texto}>Não se preocupe pode contactar directamente o hostital ou o seu médico.</Text>
+        <Text style={styles.texto}>+351 22x xxx xxx</Text>
+        <Text style={styles.texto}>+351 22x xxx xxx</Text>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+    titulo:{
+        color: '#323BEA',
+        fontSize: 32,
+        textAlign: 'center',
+        margin: Dimensions.get('window').width * 0.025,
+    },
+    ajuda:{
+        color: '#FE005C',
+        fontSize: 25,
+        textAlign: 'left',
+        margin: Dimensions.get('window').width * 0.025,
+        marginLeft: Dimensions.get('window').width * 0.075,
+    },
+    texto:{
+        color: '#323BEA',
+        fontSize: 25,
+        textAlign: 'center',
+        margin: Dimensions.get('window').width * 0.025,
+        marginLeft: Dimensions.get('window').width * 0.1,
+        marginRight: Dimensions.get('window').width * 0.1,
+    },
     headerLeft: {
-      margin: 10,
-      width: 24,
-      height: 24,
-      resizeMode: 'contain',
-      alignSelf: 'center'
-  },
-  headerTitle: {
-      flex:1,
-      fontWeight: 'normal',
-      width: 85,
-      height: Dimensions.get('window').width * 0.09,
-      resizeMode: 'contain',
-      alignSelf: 'center'
-  },
-  headerRight: {
-      margin: 8,
-      width: 24,
-      height: 24,
-      resizeMode: 'contain',
-      alignSelf: 'center'
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+        margin: 10,
+        width: 24,
+        height: 24,
+        resizeMode: 'contain',
+        alignSelf: 'center'
+    },
+    headerTitle: {
+        flex:1,
+        fontWeight: 'normal',
+        width: 85,
+        height: Dimensions.get('window').width * 0.09,
+        resizeMode: 'contain',
+        alignSelf: 'center'
+    },
+    headerRight: {
+        margin: 8,
+        width: 24,
+        height: 24,
+        resizeMode: 'contain',
+        alignSelf: 'center'
+    },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
 });

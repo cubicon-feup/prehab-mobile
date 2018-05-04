@@ -181,18 +181,19 @@ export class ExerciseDescription extends React.Component {
 
     return (
     <View style={styles.containerBack}>  
-      <Text style={styles.title}>{title}</Text>  
 
-      <Text style={{padding: 10, fontSize: 25}}>
-        {description}
-      </Text>
-      
+       <Text style={styles.title}>{title}</Text>  
+
       <View style={styles.multimediaContainer}>
         <Image 
           style={styles.itemIcon}
           source={{uri: multimediaURL}}
         />
       </View>
+
+      <Text style={styles.ExerciseDescription}>
+        {description}
+      </Text>
 
       <View style={styles.container}>
         <View style={styles.containerB}>
@@ -215,6 +216,13 @@ export class ExerciseDescription extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  ExerciseDescription: {
+    margin: Dimensions.get('window').width * 0.025,
+    fontSize: 18,
+    color: '#4B5FE7',
+    textAlign: 'center',
+    alignSelf: 'center'
+  },
   headerLeft: {
     margin: 10,
     width: 24,

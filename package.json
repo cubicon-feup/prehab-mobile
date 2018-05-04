@@ -34,6 +34,7 @@
     "react-native-list-popover": "^1.1.1",
     "react-native-material-ui": "^1.22.1",
     "react-native-modal-dropdown": "^0.6.2",
+    "react-native-percentage-circle": "^1.0.7",
     "react-native-simple-expand": "^0.1.3",
     "react-native-swiper": "^1.5.13",
     "react-native-toolbar-component": "0.0.1",
