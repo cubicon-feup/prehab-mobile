@@ -80,6 +80,7 @@ export class ExerciseScreen extends Component {
           isLoading: false,
           taskSchedule: responseJson.data.task_schedule,
           initialIndex: index,
+          ActualDay: index,
         }, function(){
         });
 
@@ -112,6 +113,7 @@ export class ExerciseScreen extends Component {
       });
 
       let date = Object.keys(orderedSchedule)[i];
+      let ActualDate = Object.keys(orderedSchedule)[this.state.ActualDay];
       let tasks = orderedSchedule[date];
 
       return (
@@ -130,6 +132,35 @@ export class ExerciseScreen extends Component {
                       onPress={() => {
                         if (item['status'] === "Pending") {
                           this.props.navigation.navigate('ExerciseDescription',{
+                            viewOnly: "0",
+                            data: date,
+                            dataAtual: ActualDate,
+                            id: item['id'],
+                            title: item['title'],
+                            description: item['description'],
+                            multimediaURL: item['multimedia_link'],
+                            status: item['status'],
+                            taskType: item['task_type']
+                          })
+                        }
+                        else if (item['status'] === "Completed") {
+                          this.props.navigation.navigate('ExerciseDescription',{
+                            viewOnly: "1",
+                            data: date,
+                            dataAtual: ActualDate,
+                            id: item['id'],
+                            title: item['title'],
+                            description: item['description'],
+                            multimediaURL: item['multimedia_link'],
+                            status: item['status'],
+                            taskType: item['task_type']
+                          })
+                        }
+                        else {
+                          this.props.navigation.navigate('ExerciseDescription',{
+                            viewOnly: "1",
+                            data: date,
+                            dataAtual: ActualDate,
                             id: item['id'],
                             title: item['title'],
                             description: item['description'],
@@ -141,7 +172,7 @@ export class ExerciseScreen extends Component {
                       }}
                       style={styles.item}
                     > 
-                      <FlatListItem item={item}></FlatListItem>
+                      <FlatListItem item={item} data={date} dataAtual={ActualDate}></FlatListItem>
                     </TouchableOpacity>
                   </View>
                 );
@@ -151,6 +182,7 @@ export class ExerciseScreen extends Component {
           </View>
         </View>
       );
+
     });
 
     return (

@@ -54,14 +54,14 @@ constructor(props){
   }
 
   componentDidMount(){
-    this.prehabApi.getPrehabNutrition()
+    this.prehabApi.getPrehabPlan()
     .then((response) => response.json())
     .then((responseJson) => {
       if (responseJson.code === 200) {
 
         let index = 0;
 
-        Object.entries(responseJson.data.meal_schedule).map((nutrition, i) => { 
+        Object.entries(responseJson.data.meal_schedule).map((exercises, i) => { 
           const unorderedSchedule = responseJson.data.meal_schedule;
           const ordered = {};
           
@@ -105,7 +105,7 @@ constructor(props){
       )
     }
 
-    const dayExercises = Object.entries(this.state.taskSchedule).map((nutrition, i) => { 
+    const dayExercises = Object.entries(this.state.taskSchedule).map((exercises, i) => { 
 
       const orderedSchedule = {};
       const unorderedSchedule = this.state.taskSchedule;
@@ -121,6 +121,7 @@ constructor(props){
         <Text style={styles.title}>Nutrição</Text>
         <Text style={styles.data}>{date}</Text>
         <FlatList 
+              style = {{marginBottom: Dimensions.get('window').width * 0.30}}
               data={tasks}
               keyExtractor={(item, index) => 'scroll-view-${index}'}
               renderItem={ ({item}) => {
@@ -137,8 +138,7 @@ constructor(props){
                 </View>
                 );
         }}    
-        >
-        </FlatList>
+        />
         </View>
       );
     });
@@ -151,6 +151,7 @@ constructor(props){
               loop={false}
               nextButton={<Text style={styles.buttonText}>›</Text>}
               prevButton={<Text style={styles.buttonText}>‹</Text>}
+              index={this.state.initialIndex}
       >
         {dayExercises}
       </Swiper>

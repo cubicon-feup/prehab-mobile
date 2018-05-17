@@ -32,7 +32,8 @@ class DrawerMenu extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.menuItem}
-          //onPress={() => this._navigate("ExerciseScreen", { isStatusBarHidden: false })}
+          onPress={() =>
+            this._navigate("PersonalProfileScreen", { isStatusBarHidden: false })}
         >
           <Text style={styles.menuItemText}>Perfil Pessoal</Text>
         </TouchableOpacity>

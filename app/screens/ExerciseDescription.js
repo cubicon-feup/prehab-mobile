@@ -65,6 +65,11 @@ export class ExerciseDescription extends React.Component {
   onFinalOk = () => {
     let { params } = this.props.navigation.state;
     let taskId = params.id;
+    let dataReal = params.data;
+    let dataActualReal = params.dataAtual;
+    let view = params.viewOnly;
+
+    if(dataReal===dataActualReal && view === "0"){
 
     Alert.alert(
       'Confirmação',
@@ -112,13 +117,21 @@ export class ExerciseDescription extends React.Component {
       { cancelable: false }
     )
   }
+  }
 
   onFinalNotOk = () => {
     let { params } = this.props.navigation.state;
+
     let taskId = params.id;
+    let dataReal = params.data;
+    let dataActualReal = params.dataAtual;
+    let view = params.viewOnly;
+
+    if(dataReal===dataActualReal && view === "0"){
 
     Alert.alert(
       'Confirmação',
+      
       'Pretende confirmar que não executou esta tarefa?',
       [
         {text: 'Não', onPress: () => {}, style: 'cancel'},
@@ -162,6 +175,7 @@ export class ExerciseDescription extends React.Component {
       ],
       { cancelable: false }
     )
+    }  
   }
 
   onBack = () => {
@@ -173,6 +187,9 @@ export class ExerciseDescription extends React.Component {
     const { params } = this.props.navigation.state;
     
     const id = params ? params.id : null;
+    const view = params ? params.viewOnly : null;
+    const dataReal = params ? params.data : null;
+    const dataActualReal = params ? params.dataAtual : null;
     const title = params ? params.title : null;
     const description = params ? params.description : null;
     const multimediaURL = params ? params.multimediaURL : null;

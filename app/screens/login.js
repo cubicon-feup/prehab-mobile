@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Alert,Image, TextInput,KeyboardAvoidingView,Dimensions} from 'react-native';
+import { Alert, Image, TextInput, KeyboardAvoidingView, Dimensions, AsyncStorage } from 'react-native';
 import { Card, Button, FormLabel, FormInput } from "react-native-elements";
 import { onSignIn } from "../config/auth";
 import PrehabApi from "../services/PrehabApi";
@@ -32,6 +32,7 @@ export default class Login extends React.Component {
             if (responseJson.code === 200) {
                 let apiToken = responseJson.data.jwt;
                 let prehabId = '' + responseJson.data.prehab_id;
+                AsyncStorage.setItem('user', JSON.stringify(username));
                 onSignIn(apiToken, prehabId).then(() => this.props.navigation.navigate("SignedIn"));
             } else {
                 this.clearInput();
@@ -72,7 +73,7 @@ export default class Login extends React.Component {
                     title="Entrar"
                     onPress={() => {
                         if(this.state.password!=""){
-                            this._onSignIn(this.state.username,this.state.password);
+                            this._onSignIn(this.state.username,this.state.password)
                         }else{
                             Alert.alert('Introduza a sua password')
                         }

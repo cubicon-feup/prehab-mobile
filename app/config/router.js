@@ -8,6 +8,7 @@ import { ExerciseFinal } from '../screens/ExerciseFinal';
 import { AlertScreen } from '../screens/AlertScreen';
 import { DrawerNavigator } from 'react-navigation';
 import { HelpScreen } from '../screens/HelpScreen';
+import { PersonalProfileScreen } from '../screens/PersonalProfileScreen'
 import { StyleSheet, Platform, View, Image, TouchableOpacity, YellowBox, Dimensions, StatusBar } from 'react-native';
 import { FontAwesome } from "react-native-vector-icons";
 
@@ -55,6 +56,11 @@ export const NavigationStack = StackNavigator({
     },
     HelpScreen: {
         screen: HelpScreen,
+        navigationOptions: {
+        },
+    },
+    PersonalProfileScreen: {
+        screen: PersonalProfileScreen,
         navigationOptions: {
         },
     },

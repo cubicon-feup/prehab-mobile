@@ -137,8 +137,11 @@ const styles = StyleSheet.create({
     imageView: {
         width: 32, 
         height: 32, 
-        margin: 5,
+        margin: 10,
         alignContent:'flex-end'
       },
+    itemIcon: {
+        margin: 10,
+    }
 
 });

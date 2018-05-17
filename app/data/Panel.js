@@ -74,7 +74,8 @@ class Panel extends Component{
                     <TouchableHighlight
                         style={styles.button}
                         onPress={this.toggle.bind(this)}
-                        underlayColor="#f1f1f1">
+                        underlayColor="#FFFFFF"
+                    >
                         <Image
                             style={styles.buttonImage}
                             source={icon}>
