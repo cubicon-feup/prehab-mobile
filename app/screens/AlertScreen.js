@@ -195,7 +195,7 @@ export class AlertScreen extends React.Component {
         <View style={styles.graphBox}>
               <Text style={styles.texto}>Tarefas realizadas:</Text>  
                 <View style={styles.graph}>
-                  <PercentageCircle radius={42} percent={parseInt((this.state.feitos/this.state.contador)*100)} color={"#FE005C"} borderWidth={8} textStyle={{fontSize: 24, color: '#323BEA'}}></PercentageCircle>
+                  <PercentageCircle radius={42} percent={parseInt((this.state.feitos/this.state.contador)*100)} color={"#FE005C"} bgcolor= {'#B7F8DB'} borderWidth={8} textStyle={{fontSize: 24, color: '#323BEA'}}></PercentageCircle>
                 </View>
               <Text style={styles.texto}>Continue com o bom trabalho!</Text>
         </View>    
@@ -219,7 +219,7 @@ export class AlertScreen extends React.Component {
         <View style={styles.graphBoxN}>
         <Text style={styles.texto}>Tarefas realizadas:</Text>  
           <View style={styles.graph}>
-            <PercentageCircle radius={42} percent={0} color={"#FE005C"} borderWidth={8} textStyle={{fontSize: 24, color: '#323BEA'}}></PercentageCircle>
+            <PercentageCircle radius={42} percent={0} innerColor= {'##B7F8DB'} color={"#FE005C"} borderWidth={8} textStyle={{fontSize: 24, color: '#323BEA'}}></PercentageCircle>
           </View>
         <Text style={styles.texto}>Ainda não chegou a este dia, foco!</Text>
         </View>
