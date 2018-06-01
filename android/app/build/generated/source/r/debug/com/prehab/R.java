@@ -1974,7 +1974,32 @@ public final class R {
     public static final int abc_textfield_search_activated_mtrl_alpha=0x7f06003b;
     public static final int abc_textfield_search_default_mtrl_alpha=0x7f06003c;
     public static final int abc_textfield_search_material=0x7f06003d;
-    public static final int notification_template_icon_bg=0x7f06003e;
+    public static final int app_assets_img_accomplished=0x7f06003e;
+    public static final int app_assets_img_agenda=0x7f06003f;
+    public static final int app_assets_img_ajuda=0x7f060040;
+    public static final int app_assets_img_alarm=0x7f060041;
+    public static final int app_assets_img_arrow_down=0x7f060042;
+    public static final int app_assets_img_arrow_left=0x7f060043;
+    public static final int app_assets_img_arrow_right=0x7f060044;
+    public static final int app_assets_img_arrow_up=0x7f060045;
+    public static final int app_assets_img_checked=0x7f060046;
+    public static final int app_assets_img_exercicio=0x7f060047;
+    public static final int app_assets_img_logo_1_alt=0x7f060048;
+    public static final int app_assets_img_menu=0x7f060049;
+    public static final int app_assets_img_notaccomplished=0x7f06004a;
+    public static final int app_assets_img_nutricao=0x7f06004b;
+    public static final int app_assets_img_person=0x7f06004c;
+    public static final int app_assets_img_sj=0x7f06004d;
+    public static final int app_assets_img_tick=0x7f06004e;
+    public static final int app_assets_img_unchecked=0x7f06004f;
+    public static final int app_assets_img_warning=0x7f060050;
+    public static final int node_modules_reactnativeelements_src_rating_images_bell=0x7f060051;
+    public static final int node_modules_reactnativeelements_src_rating_images_heart=0x7f060052;
+    public static final int node_modules_reactnativeelements_src_rating_images_rocket=0x7f060053;
+    public static final int node_modules_reactnativeelements_src_rating_images_star=0x7f060054;
+    public static final int node_modules_reactnavigation_src_views_assets_backicon=0x7f060055;
+    public static final int node_modules_reactnavigation_src_views_assets_backiconmask=0x7f060056;
+    public static final int notification_template_icon_bg=0x7f060057;
   }
   public static final class id {
     public static final int action0=0x7f070000;
