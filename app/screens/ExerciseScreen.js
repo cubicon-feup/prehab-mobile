@@ -86,6 +86,7 @@ export class ExerciseScreen extends Component {
           isLoading: false,
           taskSchedule: responseJson.data.task_schedule,
           initialIndex: index,
+          ActualDay: index,
         }, function(){
         });
 

@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Image, TouchableOpacity, Dimensions, Alert} from 'react-native';
+import { StyleSheet, View, Image, TouchableOpacity, Dimensions, Alert, ScrollView } from 'react-native';
 import Text from '../config/AppText';
 import PropTypes from 'prop-types';
-import Button from 'react-native-button'
-import FlatListItem from '../data/FlatListItem'
+import Button from 'react-native-button';
+import FlatListItem from '../data/FlatListItem';
 import PrehabApi from '../services/PrehabApi';
+import TaskButtons from './TaskButtons';
 
 import { NavigationActions } from 'react-navigation';
 
@@ -62,122 +63,6 @@ export class ExerciseDescription extends React.Component {
     this.props.navigation.dispatch(resetAction);
   }
 
-  onFinalOk = () => {
-    let { params } = this.props.navigation.state;
-    let taskId = params.id;
-    let dataReal = params.data;
-    let dataActualReal = params.dataAtual;
-    let view = params.viewOnly;
-
-    if(dataReal===dataActualReal && view === "0"){
-
-    Alert.alert(
-      'Confirmação',
-      'Pretende confirmar que executou esta tarefa?',
-      [
-        {text: 'Não', onPress: () => {}, style: 'cancel'},
-        {text: 'Sim', onPress: () => {
-          
-          Alert.alert(
-            'Dificuldades',
-            'Teve alguma dificuldade em executar esta tarefa?',
-            [
-              { text: 'Não', onPress: () => {
-                console.log("CLICKED");
-                this.prehabApi.executeTaskWithoutDifficulties(taskId, true)
-                .then((response) => response.json())
-                .then((responseJson) => {
-                    if (responseJson.code === 200) {
-                      this.props.navigation.navigate('ExerciseFinal', {value: 1});
-                    } else {          
-                    }
-                }).catch(error => {
-                    console.error(error);
-                });
-
-              }, style: 'cancel'},
-
-              { text: 'Sim', onPress: () => {
-                this.prehabApi.executeTaskWithDifficulties(taskId, true, "")
-                .then((response) => response.json())
-                .then((responseJson) => {
-                    if (responseJson.code === 200) {
-                      this.props.navigation.navigate('ExerciseFinal', {value: 1});
-                    } else {          
-                    }
-                }).catch(error => {
-                    console.error(error);
-                });
-              }},
-            ],
-            { cancelable: false }
-          )
-        }},
-      ],
-      { cancelable: false }
-    )
-  }
-  }
-
-  onFinalNotOk = () => {
-    let { params } = this.props.navigation.state;
-
-    let taskId = params.id;
-    let dataReal = params.data;
-    let dataActualReal = params.dataAtual;
-    let view = params.viewOnly;
-
-    if(dataReal===dataActualReal && view === "0"){
-
-    Alert.alert(
-      'Confirmação',
-      
-      'Pretende confirmar que não executou esta tarefa?',
-      [
-        {text: 'Não', onPress: () => {}, style: 'cancel'},
-        {text: 'Sim', onPress: () => {
-            
-          Alert.alert(
-            'Dificuldades',
-            'Não executou esta tarefa porque teve alguma dificuldade?',
-            [
-              {text: 'Não', onPress: () => {
-
-                this.prehabApi.executeTaskWithoutDifficulties(taskId, false)
-                .then((response) => response.json())
-                .then((responseJson) => {
-                    if (responseJson.code === 200) {
-                      this.props.navigation.navigate('ExerciseFinal', {value: -1});
-                    } else {          
-                    }
-                }).catch(error => {
-                    console.error(error);
-                });
-
-              }, style: 'cancel'},
-              { text: 'Sim', onPress: () => {
-
-                this.prehabApi.executeTaskWithDifficulties(taskId, false, "")
-                .then((response) => response.json())
-                .then((responseJson) => {
-                    if (responseJson.code === 200) {
-                      this.props.navigation.navigate('ExerciseFinal', {value: -1});
-                    } else {          
-                    }
-                }).catch(error => {
-                    console.error(error);
-                });
-              }},
-            ],
-            { cancelable: false }
-          )
-        }},
-      ],
-      { cancelable: false }
-    )
-    }  
-  }
-
   onBack = () => {
     this.props.navigation.navigate('ExerciseScreen');
   }
@@ -197,45 +82,37 @@ export class ExerciseDescription extends React.Component {
     const taskType = params ? params.taskType : null;
 
     return (
-    <View style={styles.containerBack}>  
+      <View style={styles.containerBack}> 
+        <ScrollView contentContainerStyle={styles.contentContainer}>
+            <Text style={styles.title}>{title}</Text>  
 
-       <Text style={styles.title}>{title}</Text>  
+            <View style={styles.multimediaContainer}>
+              <Image 
+                style={styles.itemIcon}
+                source={{uri: multimediaURL}}
+              />
+            </View>
 
-      <View style={styles.multimediaContainer}>
-        <Image 
-          style={styles.itemIcon}
-          source={{uri: multimediaURL}}
-        />
+            <Text style={styles.ExerciseDescription}>
+              {description}
+            </Text>
+        </ScrollView>
+
+        <TaskButtons {...this.props}></TaskButtons>
+
       </View>
-
-      <Text style={styles.ExerciseDescription}>
-        {description}
-      </Text>
-
-      <View style={styles.container}>
-        <View style={styles.containerB}>
-          <Button
-          style={styles.buttonContainerC}
-          onPress={() => this.onFinalOk()}>
-            Cumprido
-          </Button>
-          
-          <Button
-          style={styles.buttonContainerF}
-          onPress={() => this.onFinalNotOk()}>
-            Não Cumprido
-          </Button>
-        </View>
-      </View>
-    </View>  
     );
   }
 }
 
 const styles = StyleSheet.create({
+  contentContainer: {
+    
+  },
   ExerciseDescription: {
     margin: Dimensions.get('window').width * 0.025,
-    fontSize: 18,
+    fontSize: 20,
+    marginTop: 20,
     color: '#4B5FE7',
     textAlign: 'center',
     alignSelf: 'center'
@@ -300,7 +177,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '300',
-    marginTop:10,
+    marginTop: 10,
     marginBottom: 20,
     color:'#323BEA'
   },
@@ -310,12 +187,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   container: {
-    flex: 1,
+    borderTopColor: '#BCE0FD',
+    borderTopWidth: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
   containerB: {
+    marginTop: 5,
     flexDirection:'row',
     justifyContent: 'flex-start',
   },
@@ -359,7 +238,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   itemIcon: {
-    width: Dimensions.get('window').width * 0.6,
+    width: Dimensions.get('window').width * 0.9,
     height: 250,
     resizeMode: 'contain',
   },
