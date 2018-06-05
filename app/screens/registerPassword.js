@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Alert,Image, TextInput, KeyboardAvoidingView, Dimensions} from 'react-native';
+import { Alert, Image, TextInput, KeyboardAvoidingView, Dimensions} from 'react-native';
 import { Card, Button, FormLabel, FormInput } from "react-native-elements";
 import { onRegisterPassword } from "../config/auth";
 import PrehabApi from '../services/PrehabApi';
@@ -26,7 +26,16 @@ export default class RegisterPassword extends React.Component {
             this.prehabApi.registerPassword(usercode, password)
             .then(response => {
                 if (response.status === 200){
-                    onRegisterPassword().then(() => this.props.navigation.navigate("SignIn"));
+                    onRegisterPassword().then(() => {
+                        Alert.alert(
+                            'Ativação bem sucedida',
+                            'A tua conta foi ativada com sucesso. Já podes entrar com a tua nova palavra-passe.',
+                            [
+                                {text: 'OK', onPress: () => this.props.navigation.navigate("SignIn")},
+                            ],
+                            { cancelable: false }
+                        )
+                    });
                 } else {
                    alert('Operação não efetuada');                
                 }
@@ -75,7 +84,7 @@ export default class RegisterPassword extends React.Component {
                     buttonStyle={styles.button}
                     containerViewStyle={{width: '100%',paddingLeft:13,paddingRight:13,alignItems:"center"}}
                     backgroundColor="#B7F8DB"
-                    textStyle={{ color: "#7AC4FF"}}
+                    textStyle={{ color: "#7AC4FF", fontSize: 20}}
                     title="Registar"
                     onPress={() => {
                         if(this.state.password!=""&this.state.confirmPassword!=""&this.state.usercode!=""){
@@ -86,9 +95,17 @@ export default class RegisterPassword extends React.Component {
                         
                     }}
                 />
-                <Text style={{color:'#7AC4FF',marginTop:30}}>Já se encontra registado?      <Text style={{color:'#7AC4FF',textDecorationLine: 'underline'}} onPress={() => this.props.navigation.navigate("SignIn")}>
-                    Entrar
-                </Text></Text>
+
+                <Text style={{color:'#7AC4FF',marginTop: 25, marginBottom:10, fontSize: 20}}>Já estás registado?
+                </Text>
+                <Button 
+                    buttonStyle={styles.button}
+                    containerViewStyle={{width: '100%',paddingLeft:13,paddingRight:13,alignItems: "center"}}
+                    backgroundColor="#B7F8DB"
+                    textStyle={{ color: "#7AC4FF", fontSize: 20}}
+                    title="Entrar"
+                    onPress={() => this.props.navigation.navigate("SignIn")}
+                />
             </KeyboardAvoidingView>
         );
     }
@@ -104,6 +121,7 @@ const styles = StyleSheet.create({
     },
     input: {
       margin: 10,
+      fontSize: 17,
       padding:15,
       alignSelf: 'stretch',
       height: 48,
@@ -124,10 +142,10 @@ const styles = StyleSheet.create({
     borderRadius:100,
    },
    logo:{
-      height:135,
-      width:135,
-      padding:5,
-      marginTop:25,
-      marginBottom:60
+    height: Dimensions.get('window').height * 0.3,
+    width: Dimensions.get('window').width * 0.5,
+    padding:5,
+    marginTop:20,
+    marginBottom: 25
    },
 });

@@ -50,7 +50,7 @@ export default class Login extends React.Component {
                 <TextInput style = {styles.input}
                     underlineColorAndroid = "transparent"
                     placeholder = "Utilizador"
-                    placeholderTextColor = "#7AC4FF"
+                    placeholderTextColor = "#ccc"
                     autoCapitalize = "none"
                     value={this.state.username}
                     onChangeText={(username) => this.setState({username})}
@@ -59,7 +59,7 @@ export default class Login extends React.Component {
                     secureTextEntry={true}
                     underlineColorAndroid = "transparent"
                     placeholder = "Palavra-passe"
-                    placeholderTextColor = "#7AC4FF"
+                    placeholderTextColor = "#ccc"
                     autoCapitalize = "none"
                     value={this.state.password}
                     onChangeText={(password) => this.setState({password})}
@@ -69,7 +69,7 @@ export default class Login extends React.Component {
                     buttonStyle={styles.button}
                     containerViewStyle={{width: '100%',paddingLeft:13,paddingRight:13,alignItems: "center"}}
                     backgroundColor="#B7F8DB"
-                    textStyle={{ color: "#7AC4FF"}}
+                    textStyle={{ color: "#7AC4FF", fontSize: 20}}
                     title="Entrar"
                     onPress={() => {
                         if(this.state.password!=""){
@@ -79,15 +79,13 @@ export default class Login extends React.Component {
                         }
                     }}
                 />
-                <Text style={{color:'#7AC4FF',textDecorationLine: 'underline',marginTop:10,marginBottom:15}}>
-                    Esqueci-me da palavra-passe
-                </Text>
-                <Text style={{color:'#7AC4FF',marginTop:15,marginBottom:10,}}>Não tens conta?</Text>
+
+                <Text style={{color:'#7AC4FF', marginTop: 35, marginBottom:10, fontSize: 20}}>Não tens conta?</Text>
                 <Button
                     buttonStyle={styles.button}
                     containerViewStyle={{width: '100%',paddingLeft:13,paddingRight:13,alignItems: "center"}}
                     backgroundColor="#B7F8DB"
-                    textStyle={{ color: "#7AC4FF"}}
+                    textStyle={{ color: "#7AC4FF", fontSize: 20}}
                     title="Registar"
                     onPress={() => this.props.navigation.navigate("RegisterPwd")}
                 />
@@ -108,6 +106,7 @@ const styles = StyleSheet.create({
     },
     input: {
       margin: 10,
+      fontSize: 17,
       padding:15,
       alignSelf: 'stretch',
       height: 48,
@@ -128,10 +127,10 @@ const styles = StyleSheet.create({
     borderRadius:100,
    },
    logo:{
-      height:135,
-      width:135,
-      padding:5,
-      marginTop:25,
-      marginBottom:60
+    height: Dimensions.get('window').height * 0.3,
+    width: Dimensions.get('window').width * 0.5,
+    padding:5,
+    marginTop:20,
+    marginBottom: 25
    },
 });
