@@ -58,7 +58,7 @@ export class ExerciseScreen extends Component {
     .then((responseJson) => {
       if (responseJson.code === 200) {
 
-        let index = 0;
+        let index = 0, priorIndex = 0;
 
         Object.entries(responseJson.data.task_schedule).map((exercises, i) => { 
           const unorderedSchedule = responseJson.data.task_schedule;
@@ -72,15 +72,20 @@ export class ExerciseScreen extends Component {
 
           if (moment(date).isSame(moment(), 'day')) {
             index = i;
+          } else if (moment().diff(moment(date)) > 0) {
+            priorIndex = i;
           }
 
         });
+
+        if (index === 0) {
+          index = priorIndex;
+        }
 
         this.setState({
           isLoading: false,
           taskSchedule: responseJson.data.task_schedule,
           initialIndex: index,
-          ActualDay: index,
         }, function(){
         });
 

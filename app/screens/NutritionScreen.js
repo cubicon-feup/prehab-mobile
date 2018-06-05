@@ -59,7 +59,7 @@ constructor(props){
     .then((responseJson) => {
       if (responseJson.code === 200) {
 
-        let index = 0;
+        let index = 0, priorIndex = 0;
 
         Object.entries(responseJson.data.meal_schedule).map((exercises, i) => { 
           const unorderedSchedule = responseJson.data.meal_schedule;
@@ -73,9 +73,15 @@ constructor(props){
 
           if (moment(date).isSame(moment(), 'day')) {
             index = i;
+          } else if (moment().diff(moment(date)) > 0) {
+            priorIndex = i;
           }
 
         });
+
+        if (index === 0) {
+          index = priorIndex;
+        }
 
         this.setState({
           isLoading: false,
@@ -188,22 +194,22 @@ const styles = StyleSheet.create({
       height: 24,
       resizeMode: 'contain',
       alignSelf: 'center'
-  },
-  headerTitle: {
-      flex:1,
-      fontWeight: 'normal',
-      width: 85,
-      height: Dimensions.get('window').width * 0.09,
-      resizeMode: 'contain',
-      alignSelf: 'center'
-  },
-  headerRight: {
-      margin: 8,
-      width: 24,
-      height: 24,
-      resizeMode: 'contain',
-      alignSelf: 'center'
-  },
+    },
+    headerTitle: {
+        flex:1,
+        fontWeight: 'normal',
+        width: 85,
+        height: Dimensions.get('window').width * 0.09,
+        resizeMode: 'contain',
+        alignSelf: 'center'
+    },
+    headerRight: {
+        margin: 8,
+        width: 24,
+        height: 24,
+        resizeMode: 'contain',
+        alignSelf: 'center'
+    },
     item: {
       width: Dimensions.get('window').width * 0.8,
       borderWidth: 2,
