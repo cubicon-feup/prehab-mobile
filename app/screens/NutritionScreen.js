@@ -79,7 +79,7 @@ constructor(props){
 
         this.setState({
           isLoading: false,
-          taskSchedule: responseJson.data.meal_schedule,
+          mealSchedule: responseJson.data.meal_schedule,
           initialIndex: index,
         }, function(){
         });
@@ -105,16 +105,21 @@ constructor(props){
       )
     }
 
-    const dayExercises = Object.entries(this.state.taskSchedule).map((exercises, i) => { 
+    const dayExercises = Object.entries(this.state.mealSchedule).map((exercises, i) => { 
 
       const orderedSchedule = {};
-      const unorderedSchedule = this.state.taskSchedule;
+      const unorderedSchedule = this.state.mealSchedule;
       Object.keys(unorderedSchedule).sort(this.sortDate).forEach(function(key) {
         orderedSchedule[key] = unorderedSchedule[key];
       });
 
       let date = Object.keys(orderedSchedule)[i];
-      let tasks = orderedSchedule[date];
+      let meals = orderedSchedule[date];
+      
+      //let sortedMeals = {};
+      meals.sort(function(a, b) { 
+        return a.id - b.id;
+      });
 
       return (
         <View key={i} style={styles.slide}>
@@ -122,7 +127,7 @@ constructor(props){
         <Text style={styles.data}>{date}</Text>
         <FlatList 
               style = {{marginBottom: Dimensions.get('window').width * 0.30}}
-              data={tasks}
+              data={meals}
               keyExtractor={(item, index) => 'scroll-view-${index}'}
               renderItem={ ({item}) => {
                 return (
