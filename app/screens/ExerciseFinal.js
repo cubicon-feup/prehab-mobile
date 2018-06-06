@@ -55,9 +55,9 @@ export class ExerciseFinal extends React.Component {
         const { params } = this.props.navigation.state;
         const value = params ? params.value : null;
 
-        var myShowsDone = ['Boa!', 'Continue assim!', 'Assim mesmo!', 'É este o caminho!','Parabéns!', 'Muito bem!', 'Estás a ficar um atleta!', 'Já falta pouco, boa!','És um guerreiro!'];
+        var myShowsDone = ['Boa!', 'Continua assim!', 'Assim mesmo!', 'É este o caminho!','Parabéns!', 'Muito bem!', 'Estás a ficar um atleta!', 'Excelente!','És um guerreiro!', 'És o maior!'];
         var showDone = myShowsDone[Math.floor(Math.random() * myShowsDone.length)];
-        var myShowsNotDone = ['Então?', 'Oh, então?', 'Não desistas!', 'Amanhã será melhor!','Já falta pouco, força!', 'Tu consegues!', 'És o melhor, força!'];
+        var myShowsNotDone = ['Então?', 'Oh, então?', 'Não desistas!', 'Que se passa?','Sê forte, não te prejudiques!', 'Não deites tudo a perder!', 'Se não te esforçares, não vais ficar melhor!', 'O teu médico não vai gostar...', 'Cuidado, isto é para o teu bem!'];
         var showNotDone = myShowsNotDone[Math.floor(Math.random() * myShowsNotDone.length)];
 
         if (value == 1) {

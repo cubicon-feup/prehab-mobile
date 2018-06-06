@@ -221,7 +221,7 @@ export class AlertScreen extends React.Component {
           <View style={styles.graph}>
             <PercentageCircle radius={42} percent={0} color={"#FE005C"} bgcolor= {'#B7F8DB'} borderWidth={8} textStyle={{fontSize: 24, color: '#323BEA'}}></PercentageCircle>
           </View>
-        <Text style={styles.texto}>Ainda não chegou a este dia, foco!</Text>
+        <Text style={styles.texto}>Ainda não chegaste a este dia. Tudo a seu tempo!</Text>
         </View>
         </View> 
         );  

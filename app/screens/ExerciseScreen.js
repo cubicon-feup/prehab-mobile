@@ -164,7 +164,7 @@ export class ExerciseScreen extends Component {
                         }
                         else {
                           this.props.navigation.navigate('ExerciseDescription',{
-                            viewOnly: "1",
+                            viewOnly: "-1",
                             data: date,
                             dataAtual: ActualDate,
                             id: item['id'],

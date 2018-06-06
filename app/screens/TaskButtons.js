@@ -135,39 +135,75 @@ export default class TaskButtons extends Component {
         
         if (dataReal === dataActualReal && view === "0") {
             return (
-            <View style={styles.container}>
-                <View style={styles.containerB}>
-                    <Button
-                    style={styles.buttonContainerC}
-                    onPress={() => this.onFinalOk()}>
-                    Cumprido
-                    </Button>
-                    
-                    <Button
-                    style={styles.buttonContainerF}
-                    onPress={() => this.onFinalNotOk()}>
-                    Não Cumprido
-                    </Button>
+                <View style={styles.container}>
+                    <View style={styles.containerB}>
+                        <Button
+                        style={styles.buttonContainerC}
+                        onPress={() => this.onFinalOk()}>
+                        Cumprido
+                        </Button>
+                        
+                        <Button
+                        style={styles.buttonContainerF}
+                        onPress={() => this.onFinalNotOk()}>
+                        Não Cumprido
+                        </Button>
+                    </View>
                 </View>
-            </View>
+            );
+        } else if (view === "1") {
+            return (
+                <View style={styles.container}>
+                    <View style={styles.containerB}>
+                        <Button
+                        disabled="true"
+                        style={styles.buttonContainerC}>
+                        Cumprido
+                        </Button>
+                        
+                        <Button
+                        disabled="true"
+                        style={styles.buttonContainerDisabled}>
+                        Não Cumprido
+                        </Button>
+                    </View>
+                </View>
+            );
+        } else if (view === "-1") {
+            return (
+                <View style={styles.container}>
+                    <View style={styles.containerB}>
+                        <Button
+                        disabled="true"
+                        style={styles.buttonContainerDisabled}>
+                        Cumprido
+                        </Button>
+                        
+                        <Button
+                        disabled="true"
+                        style={styles.buttonContainerF}>
+                        Não Cumprido
+                        </Button>
+                    </View>
+                </View>
             );
         } else {
             return (
-            <View style={styles.container}>
-                <View style={styles.containerB}>
-                    <Button
-                    disabled="true"
-                    style={styles.buttonContainerDisabled}>
-                    Cumprido
-                    </Button>
-                    
-                    <Button
-                    disabled="true"
-                    style={styles.buttonContainerDisabled}>
-                    Não Cumprido
-                    </Button>
+                <View style={styles.container}>
+                    <View style={styles.containerB}>
+                        <Button
+                        disabled="true"
+                        style={styles.buttonContainerDisabled}>
+                        Cumprido
+                        </Button>
+                        
+                        <Button
+                        disabled="true"
+                        style={styles.buttonContainerDisabled}>
+                        Não Cumprido
+                        </Button>
+                    </View>
                 </View>
-            </View>
             );
         }
     }

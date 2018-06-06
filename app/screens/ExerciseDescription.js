@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     
   },
   ExerciseDescription: {
-    margin: Dimensions.get('window').width * 0.025,
+    margin: Dimensions.get('window').width * 0.045,
     fontSize: 20,
     marginTop: 20,
     color: '#4B5FE7',
